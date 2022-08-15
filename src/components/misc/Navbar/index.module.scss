@@ -1,0 +1,13 @@
+.topNav {
+    width: 100%;
+    height: var(--nav-width);
+    background-color: var(--gray5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    box-shadow: var(--box-shadow);
+    font-size: 1.2rem;
+    position: fixed;
+    font-family: 'Cubano', sans-serif;;
+}

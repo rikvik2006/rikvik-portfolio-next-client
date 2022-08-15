@@ -1,0 +1,15 @@
+.icons {
+    display: flex;
+}
+
+.icon {
+    color: var(--gray3);
+    height: 1.4em;
+    width: 1.4em;
+    margin: 0 10px;
+}
+
+.icon:nth-child(2) {
+    margin: 0 calc(2em - 10px) 0 0;
+}
+

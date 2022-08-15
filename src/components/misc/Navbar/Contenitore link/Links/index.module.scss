@@ -1,0 +1,14 @@
+.links {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    color: var(--gray3);
+}
+
+.link {
+    transition: all 0.5s ease-out;
+}
+
+.link:hover {
+    color: white;
+}

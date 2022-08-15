@@ -1,11 +1,12 @@
 import { ReactElement } from "react";
 import style from "./layout.module.scss";
+import Navbar from "../misc/Navbar";
 
 function Layout({ children }: { children: ReactElement }) {
     return (
         <>
             <div className={style.layoutStyle}>
-                <nav>NavBar</nav>
+                <Navbar />
                 <main>{children}</main>
                 <footer>Footer</footer>
             </div>
