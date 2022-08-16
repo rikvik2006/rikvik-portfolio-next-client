@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--gray5);
+    border: 5px solid var(--gray4);
+    border-radius: 10%;
+
+    h3 {
+        font-family: 'Cubano', sans-serif;
+    }
+}
