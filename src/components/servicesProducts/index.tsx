@@ -13,15 +13,17 @@ const ProductComponent: FC<Props> = ({ product }) => {
         <div className={style.container}>
             <h3>{product.name}</h3>
             <Image
+                className={style.icon}
                 src={product.icon}
                 alt={`${product.icon}`}
                 height={50}
                 width={50}
             />
             <p>{product.description}</p>
-            <span className={style.tags}>{product.tags}</span>
-            <span className={style.price}>{product.price}</span>
-            <span className={style.remaning}>{product.remaning}</span>
+            <span className={["style.tags", "style.TextStart"].join(" ")}>{product.tags.join(" ")}</span>
+            <span className={["style.price", "style.TextStart"].join(" ")}>{product.price}</span>
+            <span className={["style.remaning", "style.TextStart"].join(" ")}>{product.remaning}</span>
+            <input type="button" value="Buy" />
         </div>
     )
 }
