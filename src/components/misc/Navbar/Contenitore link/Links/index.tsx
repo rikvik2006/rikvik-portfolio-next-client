@@ -11,7 +11,7 @@ type Props = {}
 const Links: NextComponentType<Props> = () => {
     return (
         <div className={style.links}>
-            <Link href="#">
+            <Link href="/">
                 <a className={style.link}>
                     <TbMoodHappy className={style.icon} />
                     About me
