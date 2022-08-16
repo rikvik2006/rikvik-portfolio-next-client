@@ -11,10 +11,14 @@ const LoginTools: NextComponentType<Props> = () => {
     return (
         <div>
             <Link href="#" className={style.icons}>
-                <TbRocket className={style.icon} />
+                <a>
+                    <TbRocket className={style.icon} />
+                </a>
             </Link>
             <Link href="#" className={style.icons}>
-                <TbLogin className={style.icon} />
+                <a>
+                    <TbLogin className={style.icon} />
+                </a>
             </Link>
         </div >
     )

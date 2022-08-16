@@ -25,7 +25,7 @@ const Links: NextComponentType<Props> = () => {
                 </a>
             </Link>
 
-            <Link href="#">
+            <Link href="/services">
                 <a className={style.link}>
                     <TbTags className={style.icon} />
                     Services
