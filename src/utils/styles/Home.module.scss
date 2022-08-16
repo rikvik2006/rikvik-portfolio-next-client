@@ -127,3 +127,11 @@
     filter: invert(1);
   }
 }
+
+
+.homeHead {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+  padding: 4rem 7vw;
+  margin-top: 3em;
+}
