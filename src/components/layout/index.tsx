@@ -8,7 +8,6 @@ function Layout({ children }: { children: ReactElement }) {
             <div className={style.layoutStyle}>
                 <Navbar />
                 <main>{children}</main>
-                <footer>Footer</footer>
             </div>
         </>
     )

@@ -3,7 +3,9 @@ import styles from '../utils/styles/Home.module.scss'
 
 const Home: NextPage = () => {
     return (
-        <div>Home page</div>
+        <div className={styles.homeHead}>
+
+        </div>
     )
 }
 

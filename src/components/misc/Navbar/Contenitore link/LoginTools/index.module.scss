@@ -7,9 +7,14 @@
     height: 1.4em;
     width: 1.4em;
     margin: 0 10px;
+    transition: all 0.5s ease-out;
 }
 
 .icon:nth-child(2) {
     margin: 0 calc(2em - 10px) 0 0;
+}
+
+.icon:hover {
+    color: white;
 }
 
