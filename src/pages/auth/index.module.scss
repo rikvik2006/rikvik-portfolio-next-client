@@ -1,0 +1,60 @@
+.container {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em;
+    position: relative;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--gray5);
+        padding: 1em;
+        min-width: 27em;
+        min-height: auto;
+        gap: 1em;
+
+        h3 {
+            font-family: 'Cubano', sans-serif;
+            text-align: center;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+
+            input {
+                font-family: 'Poppins', sans-serif;
+                font-size: 1em;
+                font-weight: 500;            
+                padding: 0.5em;
+                border: none;
+                border-bottom: solid 3px var(--red);
+                width: 100%;
+                outline: none;
+            }
+
+            label {
+                font-style: italic;
+                font-weight: bold;
+                color: var(--gray2);
+            }
+        }
+    }
+}
+
+
+.icon {
+    position: relative;
+    left: calc(50% - 1.5em);
+    align-items: center;
+    justify-content: center;
+    width: 3em;
+    height: 3em;
+}
+
+.submit {
+    padding: 0.5em;
+}

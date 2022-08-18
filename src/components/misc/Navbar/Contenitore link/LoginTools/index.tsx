@@ -15,7 +15,7 @@ const LoginTools: NextComponentType<Props> = () => {
                     <TbRocket className={style.icon} />
                 </a>
             </Link>
-            <Link href="#" className={style.icons}>
+            <Link href="/auth/login" className={style.icons}>
                 <a>
                     <TbLogin className={style.icon} />
                 </a>
