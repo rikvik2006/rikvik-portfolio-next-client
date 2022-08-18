@@ -11,7 +11,6 @@ type Props = {
 const ProductComponent: FC<Props> = ({ product }) => {
     return (
         <div className={style.container}>
-            <h3>{product.name}</h3>
             <Image
                 className={style.icon}
                 src={product.icon}
@@ -19,6 +18,8 @@ const ProductComponent: FC<Props> = ({ product }) => {
                 height={50}
                 width={50}
             />
+            <h3>{product.name}</h3>
+            <hr />
             <p>{product.description}</p>
             <span className={["style.tags", "style.TextStart"].join(" ")}>{product.tags.join(" ")}</span>
             <span className={["style.price", "style.TextStart"].join(" ")}>{product.price}</span>
