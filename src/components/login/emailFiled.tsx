@@ -26,7 +26,7 @@ const EmailField: FC = () => {
     return (
         <div className={style.container}>
             <label htmlFor="email">Email</label>
-            <input className={color} type="email" name="email" value={email} id="email" placeholder='jon.doe@gmail.com' onChange={handleChange} required />
+            <input className={color} type="email" name="email" value={email} id="email" placeholder='john.doe@gmail.com' onChange={handleChange} required />
         </div>
     )
 }

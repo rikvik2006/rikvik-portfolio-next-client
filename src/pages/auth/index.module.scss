@@ -12,9 +12,11 @@
         flex-direction: column;
         background-color: var(--gray5);
         padding: 1em;
-        min-width: 27em;
-        min-height: auto;
+        // min-width: 27em;
+        width: clamp(20em, 27em, 30em);
+        // min-height: auto;
         gap: 1em;
+        margin: 1em;
 
         h3 {
             font-family: 'Cubano', sans-serif;

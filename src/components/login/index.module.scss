@@ -19,4 +19,11 @@
         font-weight: bold;
         color: var(--gray2);
     }
+
+    .error {
+        color: var(--gray2);
+        margin-top: 0.2em;
+        font-size: 0.9em;
+        font-weight: 500;
+    }
 }
