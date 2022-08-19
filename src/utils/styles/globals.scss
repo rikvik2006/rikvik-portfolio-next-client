@@ -78,3 +78,7 @@ h1 {
 hr {
 border-top: 0.3em dashed var(--gray4);
 }
+
+.setColor {
+  border-bottom: solid 3px var(--green) !important;
+}

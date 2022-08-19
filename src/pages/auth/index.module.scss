@@ -21,27 +21,28 @@
             text-align: center;
         }
 
-        div {
-            display: flex;
-            flex-direction: column;
+        // div {
+            // display: flex;
+            // flex-direction: column;
 
-            input {
-                font-family: 'Poppins', sans-serif;
-                font-size: 1em;
-                font-weight: 500;            
-                padding: 0.5em;
-                border: none;
-                border-bottom: solid 3px var(--red);
-                width: 100%;
-                outline: none;
-            }
+            // input {
+            //     font-family: 'Poppins', sans-serif;
+            //     font-size: 1em;
+            //     font-weight: 500;            
+            //     padding: 0.5em;
+            //     border: none;
+            //     border-bottom: solid 3px var(--green);
+            //     width: 100%;
+            //     outline: none;
+            //     transition: all 0.5s ease-in-out;
+            // }
 
-            label {
-                font-style: italic;
-                font-weight: bold;
-                color: var(--gray2);
-            }
-        }
+            // label {
+            //     font-style: italic;
+            //     font-weight: bold;
+            //     color: var(--gray2);
+            // }
+        // }
     }
 }
 
