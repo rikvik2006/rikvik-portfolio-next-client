@@ -60,4 +60,26 @@
 
 .submit {
     padding: 0.5em;
+    background-color: var(--green-dark);
+    border: none;
+    border-radius: 3px;
+    transition: all 0.5s ease-in-out;
+    font-family: "Poppins", sans-serif;
+}
+
+.submit:hover {
+    background-color: var(--green-light);
+}
+
+
+.notMember {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.7em;
+    text-align: center;
+    margin-top: -2em;
+    margin-bottom: 1em;
+}
+
+.link {
+    color: var(--blue);
 }
