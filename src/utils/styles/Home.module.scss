@@ -129,9 +129,34 @@
 }
 
 
-.homeHead {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-  padding: 4rem 7vw;
+.heroHead {
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+  padding: 0 clamp(1rem, 7vw, 200px);
   margin-top: 3em;
+  display: flex;
+  align-items: center;
+  height: 80vh;
+
+  .heroContent {
+    max-width: 100vw;
+
+    h1 {
+      font-size: 2.7em
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    text-align: left;
+  }
 }

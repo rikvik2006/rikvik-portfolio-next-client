@@ -76,9 +76,15 @@ h1 {
 }
 
 hr {
-border-top: 0.3em dashed var(--gray4);
+  border: none;
+  border-top: 2px dashed var(--gray5);
 }
 
 .setColor {
   border-bottom: solid 3px var(--green) !important;
+}
+
+p {
+  color: var(--gray2);
+  font-family: "Poppins", sans-serif;
 }
