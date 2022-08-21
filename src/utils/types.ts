@@ -7,3 +7,10 @@ export type Product = {
     price: number;
     remaning: number;
 };
+
+
+export type Skil = {
+    id: string;
+    name: string;
+    icon: string;
+}
