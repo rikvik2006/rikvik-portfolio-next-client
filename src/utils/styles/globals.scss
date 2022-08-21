@@ -48,15 +48,11 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: var(--gray6);
-  }
+body {
+  color: white;
+  background: var(--gray6);
 }
+
 
 h1 {
   font-family: 'Cubano', sans-serif;
@@ -88,3 +84,55 @@ p {
   color: var(--gray2);
   font-family: "Poppins", sans-serif;
 }
+
+.spacer {
+  aspect-ratio: 300/600;
+  height: 100%;
+  width: 400px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--gray5);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--gray4);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+
+
+@media (max-width: 600px) {
+  .layer1 {
+    background-image: url("../../../public/hero-waves-min600px.svg");
+  }
+}
+
+@media (min-width: 600px) {
+  .layer1 {
+    background-image: url("../../../public/hero-wawes-phone.svg");
+  }
+}
+
+@media (min-width: 1100px) {
+  .layer1 {
+    background-image: url("../../../public/hero-waves.svg");
+  }
+}
+
