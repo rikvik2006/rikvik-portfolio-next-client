@@ -1,0 +1,17 @@
+.wrapper {
+    width: 100%;
+    height: clamp(5em, 3em, 4em);
+    background-color: var(--gray5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    position: static;
+    bottom: 0;
+    
+    p {
+        font-size: 0.8em;
+        margin: 0.5em;
+    }
+}
