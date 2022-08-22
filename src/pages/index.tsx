@@ -13,6 +13,7 @@ const Home: NextPage<SkilsProp> = ({ skils }) => {
 
     return (
         <>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
 
             <div className={style.heroHead}>
                 <div className="spacer layer1" />
@@ -26,11 +27,95 @@ const Home: NextPage<SkilsProp> = ({ skils }) => {
             </div>
             <hr />
             <div className={style.content}>
-                <h1>My <span className="colorGradient">Skils</span></h1>
+                <h1>My <span className="colorGradient">Skills</span></h1>
                 <div className={style.mySkils}>
-                    {skils.map((skil) => (
+                    {/* {skils.map((skil) => (
                         <SkilsComponent key={skil.id} skil={skil} />
-                    ))}
+                    ))} */}
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-html5-plain" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-css3-plain" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-javascript-plain" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-typescript-plain" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-react-original" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-nextjs-original" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-bootstrap-plain" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-sass-original" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-express-original" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-php-plain" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-mongodb-plain" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-mysql-plain" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-git-plain" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-github-original" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-firebase-plain" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-heroku-original" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-googlecloud-plain" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-bash-plain" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-solidity-plain" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-jest-plain" />
+                    </div>
+
+                    <div className={style.iconContainer}>
+                        <i className="devicon-python-plain" />
+                    </div>
                 </div>
             </div>
         </>
