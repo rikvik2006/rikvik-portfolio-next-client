@@ -32,7 +32,7 @@ const Links: NextComponentType<Props> = () => {
                 </a>
             </Link>
 
-            <Link href="#">
+            <Link href="https://github.com/rikvik2006">
                 <a className={style.link}>
                     <TbBrandGithub className={style.icon} />
                     GitHub
