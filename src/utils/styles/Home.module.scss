@@ -184,11 +184,54 @@
   }
 }
 
+
 @media (min-width: 1100px) {
   .mySkils {
     display: grid;
     gap: 3em;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(auto-fit, 1fr);
+  }
+}
+
+@media (min-width: 1500px) {
+  .mySkils {
+    display: grid;
+    gap: 3em;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(auto-fit, 1fr);
+  }
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  i {
+    transition: all 0.2s ease-in-out;
+  }
+
+  div {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;
+    position: absolute;
+  }
+
+  i:hover {
+    color: var(--gray1);
+  }
+
+  i:hover + div {
+    position: absolute;
+    visibility: visible;
+    opacity: 1;
+    background-color: var(--gray1);
+    color: var(--gray5);
+    font-size: 1.2em;
+    padding: 0.5em;
+    transform: translate(0, -80px);
+    border-radius: 2px;
   }
 }

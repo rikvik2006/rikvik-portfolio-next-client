@@ -12,5 +12,5 @@ export type Product = {
 export type Skil = {
     id: string;
     name: string;
-    icon: string;
+    description: string;
 }
