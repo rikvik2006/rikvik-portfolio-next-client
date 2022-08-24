@@ -123,21 +123,24 @@
         float: left;
     }
 
-    input[type*="button"] {
+    .buttonContainer {
+        margin-top: auto;
         width: 100%;
-        padding: 0.5em;
-        font-size: 1em;
-        margin: 1em;
-        background-color: var(--green);
-        border: none;
-        border-radius: 10px;
-        box-shadow: 0 0.5em var(--blue-dark);
-        transition: all 0.5s ease-in-out;
-    }
 
-    input[type*="button"]:active {
-        box-shadow: none;
-        transform: translate(0, 0.5em);
-    }
+        input[type*="button"] {
+            width: 100%;
+            padding: 0.5em;
+            font-size: 1em;
+            margin: 1em;
+            background-color: var(--yellow);
+            border: none;
+            border-radius: 5px;
+            transition: all 0.2s ease-in-out;
+        }
 
+        input[type*="button"]:hover {
+            transform: translate(0, -5px);
+            box-shadow: 0 0 5px var(--yellow);
+        }
+    }
 }

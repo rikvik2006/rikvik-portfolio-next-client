@@ -22,8 +22,6 @@ const ServicesPage: NextPage<PropsWithProducts> = ({ products }) => {
                     <ProductComponent key={product.id} product={product} />
                 ))}
             </div>
-
-            <hr className={style.hr} />
         </>
     )
 }

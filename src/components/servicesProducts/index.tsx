@@ -46,7 +46,8 @@ const ProductComponent: FC<Props> = ({ product }) => {
             <div className={style.containerQty}>
                 <span className={["style.remaning", "style.TextStart"].join(" ")}>{product.remaning}</span>
             </div>
-            <div>
+
+            <div className={style.buttonContainer}>
                 <input type="button" value="Buy" />
             </div>
 
