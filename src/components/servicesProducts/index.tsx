@@ -2,6 +2,7 @@ import { FC } from 'react';
 import Image from 'next/image';
 import { Product } from "../../utils/types";
 import style from "./index.module.scss";
+import DescriptionComponent from './description';
 
 type Props = {
     product: Product
@@ -35,11 +36,7 @@ const ProductComponent: FC<Props> = ({ product }) => {
                 <hr className={style.hr} />
             </div>
 
-            <div className={style.containerDescription}>
-                <ul>
-                    <li>{product.description}</li>
-                </ul>
-            </div>
+            <DescriptionComponent product={product} />
 
             <div className={style.containerTags}>
                 <span className={["style.tags", "style.TextStart"].join(" ")}>{product.tags.join(", ")}</span>

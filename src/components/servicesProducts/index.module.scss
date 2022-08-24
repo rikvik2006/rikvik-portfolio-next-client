@@ -96,11 +96,14 @@
 
     .containerDescription {
         align-self: flex-start;
+        font-family: "Poppins", sans-serif;
         ul {
             li {
                 list-style: none;
+                margin: 0.3em 0;
                 &::before {
-                    content: "✅ ";
+                    content: "✅";
+                    margin-right: 0.2em;
                 }
             }
         }
