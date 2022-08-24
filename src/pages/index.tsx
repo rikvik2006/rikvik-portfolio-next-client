@@ -1,6 +1,6 @@
 import axios from 'axios';
 import type { GetServerSideProps, GetServerSidePropsContext, GetStaticPropsContext, NextPage } from 'next'
-import SkilsComponent from '../components/skils';
+import Image from 'next/image';
 import style from '../utils/styles/Home.module.scss'
 import { Skil } from "../utils/types";
 
@@ -18,7 +18,7 @@ const Home: NextPage<SkilsProp> = ({ skils }) => {
             <div className={style.heroHead}>
                 <div className="spacer layer1" />
                 <div className={style.heroContent}>
-                    <h1>Hi i am Riccardo Bussano a 15 <div className="colorGradient">full stack web developer apprendice</div></h1>
+                    <h1>Hi, i am Riccardo Bussano a 15-year-old <div className="colorGradient">aspiring Software Engineer.</div></h1>
                     <p>
                         Hi i am Riccardo an Italian junior developer, based in Turin.<br />
                         I love build web apps, backand side, and everything in beetween.
@@ -27,12 +27,34 @@ const Home: NextPage<SkilsProp> = ({ skils }) => {
             </div>
             <hr />
             <div className={style.content}>
+                <h1>About <span className="colorGradient">Me</span></h1>
+                <div className={style.aboutMe}>
+                    <Image className={style.cardTall}
+                        src={"/logoHighRes.png"}
+                        alt="me.png"
+                        width={1000}
+                        height={1000}
+                    />
+
+                    <p>I started programming at the age of 11, starting with small electronic boards like arduino, from that point programming became one of my greatest passions along with video games. Another important step for my programming career was the discovery of DiscordJs a library that is used to communicate with the discord api and thanks to this you can create fantastic bots. Creating bots I became passionate about and my bot was my first big success. Thanks to this my knowledge expanded and from that point I decided to learn the backend side of websites, this topic I am also very passionate about. Besides that I am also passionate about electronics, game developing, 3D modeling and video making</p>
+
+                    <p>Ciao</p>
+                    <p>Ciao</p>
+                    <p>Ciao</p>
+                    <p>Ciao</p>
+                    <p>Ciao</p>
+                    <p>Ciao</p>
+                    <p>Ciao</p>
+                    <p>Ciao</p>
+                    <p>Ciao</p>
+                    <p>Ciao</p>
+                </div>
+
                 <h1>My <span className="colorGradient">Skills</span></h1>
                 <div className={style.mySkils}>
                     {/* {skils.map((skil) => (
                         <SkilsComponent key={skil.id} skil={skil} />
                     ))} */}
-
                     <div className={style.iconContainer}>
                         <i className="devicon-html5-plain" />
                         <div>HTML</div>

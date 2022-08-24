@@ -235,3 +235,16 @@
     border-radius: 2px;
   }
 }
+
+.aboutMe {
+  display: grid;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 2fr));
+  grid-auto-rows: 240px;
+  aspect-ratio: 1;
+
+  .cardTall {
+    grid-row: span 2 / auto;
+  }
+}
