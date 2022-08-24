@@ -10,22 +10,50 @@ type Props = {
 
 const ProductComponent: FC<Props> = ({ product }) => {
     return (
+
+
         <div className={style.container}>
-            <Image
-                className={style.icon}
-                src={product.icon}
-                alt={`${product.icon}`}
-                height={50}
-                width={50}
-            />
-            <h3>{product.name}</h3>
-            <hr />
-            <p>{product.description}</p>
-            <span className={["style.tags", "style.TextStart"].join(" ")}>{product.tags.join(" ")}</span>
-            <span className={["style.price", "style.TextStart"].join(" ")}>{product.price}</span>
-            <span className={["style.remaning", "style.TextStart"].join(" ")}>{product.remaning}</span>
-            <input type="button" value="Buy" />
-        </div>
+            <div className={style.containerIcon}>
+                <Image
+                    className={style.icon}
+                    src={product.icon}
+                    alt={`${product.icon}`}
+                    height={100}
+                    width={100}
+                />
+            </div>
+
+            <div className={style.containerTitle}>
+                <h3>{product.name}</h3>
+            </div>
+
+            <div className={style.containerPrice}>
+                <span className={["style.price", "style.TextStart"].join(" ")}>{product.price}</span>
+            </div>
+
+            <div className={style.containerHr}>
+                <hr className={style.hr} />
+            </div>
+
+            <div className={style.containerDescription}>
+                <ul>
+                    <li>{product.description}</li>
+                </ul>
+            </div>
+
+            <div className={style.containerTags}>
+                <span className={["style.tags", "style.TextStart"].join(" ")}>{product.tags.join(", ")}</span>
+            </div>
+
+
+            <div className={style.containerQty}>
+                <span className={["style.remaning", "style.TextStart"].join(" ")}>{product.remaning}</span>
+            </div>
+            <div>
+                <input type="button" value="Buy" />
+            </div>
+
+        </div >
     )
 }
 

@@ -11,11 +11,20 @@ type PropsWithProducts = {
 
 const ServicesPage: NextPage<PropsWithProducts> = ({ products }) => {
     return (
-        <div className={style.serviceContainer}>
-            {products.map((product) => (
-                <ProductComponent key={product.id} product={product} />
-            ))}
-        </div>
+        <>
+
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+
+            <div className={style.serviceContainer}>
+                {products.map((product) => (
+                    <ProductComponent key={product.id} product={product} />
+                ))}
+            </div>
+
+            <hr className={style.hr} />
+        </>
     )
 }
 

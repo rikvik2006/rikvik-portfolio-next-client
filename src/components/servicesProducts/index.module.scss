@@ -6,26 +6,119 @@
 
     background-color: var(--gray6);
     border-top: 5px solid var(--purple);
-    max-width: 250px;
-    min-width: 250px;
+    max-width: 20em;
+    min-width: 20em;
     margin: 1.2em;
     padding-top: 3em;
 
-    h3 {
-        font-family: 'Cubano', sans-serif;
+    
+    .containerTitle {
+
+        margin: 1em 0;
+
+        h3 {
+            font-family: 'Cubano', sans-serif;
+            font-size: 1.5em;
+        }
     }
 
-    .icon {
-        border-radius: 50%;
+    .containerPrice {
+        
+        span {
+            font-size: 2em;
+            font-weight: bold;
+            font-family: "Cubano", sans-serif;
+            color: var(--green)
+        }
+
+        span::before {
+            font-family: 'DynaPuff', cursive;
+            content: "€ ";
+        }
+    }
+
+    .containerHr {
+
+        
+        .hr {
+            border: none;
+            border-top: 2px dashed var(--gray5);
+            color: var(--gray5);
+            margin-left: 0;
+            margin-right: 0;
+            background-color: red;
+            
+        }
+    }
+
+    .containerTags {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 0.9em;
+
+            &::before {
+                content: "[";
+                color: var(--yellow);
+                font-size: 1.2em;
+            }
+
+            &::after {
+                content: "]";
+                color: var(--yellow);
+                font-size: 1.2em;
+                
+            }
+        }
+        
+    }
+
+    .containerQty {
+        margin: 1em;
+
+        span {
+            font-size: 0.9;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            color: var(--yellow);
+
+            &::after {
+                content: " Qty";
+                color: var(--gray2);
+                font-weight: 200;
+            }
+        }
+    }
+
+    .containerDescription {
+        align-self: flex-start;
+        ul {
+            li {
+                list-style: none;
+                &::before {
+                    content: "✅ ";
+                }
+            }
+        }
+    }
+
+    .containerIcon  {
+
+        margin-top: 1em;
+
+        .icon {
+            border-radius: 50%;
+        }
     }
 
     .TextStart {
-        text-align: start;
+        position: relative;
+        float: left;
     }
-
-    // .description {
-    //     text-align: start;
-    // }
 
     input[type*="button"] {
         width: 100%;

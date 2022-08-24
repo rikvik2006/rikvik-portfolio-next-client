@@ -13,3 +13,13 @@
     justify-items: center;
     margin: 1.2em;
 }
+
+.hr {
+    border: none;
+    border-top: 2px dashed var(--gray5);
+    color: var(--gray5);
+    margin-right: 0;
+    margin-left: 0;
+    background-color: red;
+    
+}
