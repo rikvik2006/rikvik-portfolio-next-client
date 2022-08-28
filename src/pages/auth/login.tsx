@@ -17,7 +17,7 @@ const LoginPage: NextPage<Props> = () => {
                 <h3>Login with your accout</h3>
                 <div className={style.notMember}>Not a member? <Link href="/auth/register"><a className={style.link}>Register</a></Link></div>
                 <EmailField />
-                <PasswordFiled />
+                <PasswordFiled isRegister={false} />
 
                 <input className={style.submit} type="submit" value="Login" />
             </form>
