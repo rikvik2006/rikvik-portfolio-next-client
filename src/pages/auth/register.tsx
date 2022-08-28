@@ -5,6 +5,8 @@ import Link from "next/link";
 import EmailField from '../../components/login/emailFiled';
 import PasswordFiled from '../../components/login/passwordFiled';
 import ConfirmPasswordField from '../../components/login/confimPasswordField';
+import { handleSubmitRegister } from "../../utils/helpers/hadleSubmitResisterPage";
+
 
 type Props = {}
 
@@ -12,7 +14,7 @@ type Props = {}
 const RegisterPage: NextPage<Props> = () => {
     return (
         <div className={style.container}>
-            <form action="http://localhost:3001/api/auth/login" method='post' className={style.form} >
+            <form onSubmit={handleSubmitRegister} className={style.form} >
                 <TbUserPlus className={style.icon} />
                 <h3>Create a new account with your email</h3>
                 <div className={style.notMember}>Arledy a member? <Link href="/auth/login"><a className={style.link}>Login</a></Link></div>
