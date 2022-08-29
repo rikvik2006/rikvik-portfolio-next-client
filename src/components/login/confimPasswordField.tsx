@@ -32,7 +32,7 @@ const ConfirmPasswordField: FC = () => {
     return (
         <div className={style.container}>
             <label htmlFor="confirmPassword">Password</label>
-            <input className={color} type="text" name="password" id="confirmPassword" value={confirmPassword!} onChange={handleChange} required />
+            <input className={color} type="password" name="password" id="confirmPassword" value={confirmPassword!} onChange={handleChange} required />
             {error && <div className={style.error}>{error}</div>}
         </div>
     )
