@@ -15,8 +15,11 @@ export const handleSubmitRegister = async (event: React.FormEvent<HTMLFormElemen
 
     const response = await axios.post("http://localhost:3001/api/auth/register", requestBody);
 
-    if (response.status === 200) {
+    await console.log(response);
+
+    if (response.status === 201) {
         console.log("Ok funziona GGGGG")
-        response.data;
+        console.log(response.data)
     }
+
 }
