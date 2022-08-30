@@ -1,7 +1,8 @@
 import { GetServerSidePropsContext } from "next";
 
-export const validateCookies = async (ctx: GetServerSidePropsContext) => {
+export const validateCookies = (ctx: GetServerSidePropsContext) => {
     const sessionID = ctx.req.cookies["connect.sid"]
+    console.log("---SessionID---")
     console.log(sessionID);
 
     return sessionID ? {
