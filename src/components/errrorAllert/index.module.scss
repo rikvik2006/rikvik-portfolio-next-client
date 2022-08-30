@@ -1,0 +1,26 @@
+.container {
+    width: 15em;
+    height: 6.9em;
+    // background-color: #ED4245;
+    background-color: #491616;
+    position: absolute;
+    z-index: 4;
+    border-radius: 0.375rem;
+    border-left:  0.5rem solid #f66;
+    padding: 0.1em 1.5em;
+    margin: 3em 0.1em;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+     
+
+    h3 {
+        color: #ff2929;
+        font-family: "Poppins", sans-serif;
+    }
+
+    p {
+        font-family: "Poppins", sans-serif;
+        color: #f66;
+    }
+}
