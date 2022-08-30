@@ -1,6 +1,5 @@
 import axios from "axios";
 import React from "react";
-import { getCookie } from "../helpers/getCookies";
 import { cookieJar } from "./cookie-jar";
 
 export const handleSubmitLogin = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -20,29 +19,23 @@ export const handleSubmitLogin = async (event: React.FormEvent<HTMLFormElement>)
 
 
     try {
+        const response = await axios.post("http://localhost:3001/api/auth/login", requestBody, {
+            withCredentials: true,
+        });
 
-        // const response = await axios.post("http://localhost:3001/api/auth/login", requestBody);
-        // const response = await cookieJar("http://localhost:3001/api/auth/login", requestBody);
-
-        const response = await fetch("http://localhost:3001/api/auth/login", {
-            method: "POST",
-            mode: "cors",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(requestBody),
-            keepalive: true,
-        })
-
-        if (response.ok) {
-            console.log("-------");
-            console.log(response.headers)
+        if (response.status === 200) {
             alert("Ok funziona");
         }
     } catch (err: any) {
         console.log(err);
 
-        alert(err.response.data.msg);
+        const ErrorBox: HTMLElement | null = document.getElementById("ErrorBox")
+        ErrorBox!.style.visibility = "visible"
+        ErrorBox!.style.opacity = "1";
+        setTimeout(() => {
+            ErrorBox!.style.visibility = "hidden"
+            ErrorBox!.style.opacity = "0";
+        }, 3000)
     }
 
 }
