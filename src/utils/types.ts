@@ -14,3 +14,13 @@ export type Skil = {
     name: string;
     description: string;
 }
+
+export interface User {
+    email: string;
+    username: string;
+    password: string;
+    name: string;
+    surename: string;
+    avatar: string;
+    createdAt: Date;
+}
