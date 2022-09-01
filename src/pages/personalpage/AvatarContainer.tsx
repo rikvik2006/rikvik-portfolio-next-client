@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { FC } from 'react'
 import { User } from "../../utils/types"
-import style from "index.module.scss";
+import style from "./index.module.scss";
 
 
 type Props = {
