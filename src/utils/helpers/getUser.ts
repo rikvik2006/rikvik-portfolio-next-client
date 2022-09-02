@@ -10,7 +10,7 @@ export const getUser = async (context: GetServerSidePropsContext) => {
     if (!headers) return { redirect: { destination: "/" } };
 
     try {
-        const { data: user } = await axios.get<User>("http://localhost:3001/api/cdn", { headers })
+        const { data: user } = await axios.get<User>("http://localhost:3001/api/user", { headers })
         return { props: { user } };
     } catch (err) {
         console.log(err);
