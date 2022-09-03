@@ -21,6 +21,6 @@ export interface User {
     password: string;
     name: string;
     surename: string;
-    avatar: SVGElement;
+    avatar: string;
     createdAt: Date;
 }
