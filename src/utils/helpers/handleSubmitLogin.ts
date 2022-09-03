@@ -24,7 +24,7 @@ export const handleSubmitLogin = async (event: React.FormEvent<HTMLFormElement>)
         });
 
         if (response.status === 200) {
-            alert("Ok funziona");
+            window.location.replace("../auth/continuelogin")
         }
     } catch (err: any) {
         console.log(err);
@@ -37,5 +37,12 @@ export const handleSubmitLogin = async (event: React.FormEvent<HTMLFormElement>)
             ErrorBox!.style.opacity = "0";
         }, 3000)
     }
+
+}
+
+
+export const handleSubmitLoginContinue = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
 
 }
