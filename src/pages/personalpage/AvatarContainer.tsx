@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { FC } from 'react'
 import { User } from "../../utils/types"
 import style from "./index.module.scss";
@@ -16,7 +15,7 @@ const AvatarContainer: FC<Props> = ({ user }) => {
             <div className={style.subAvatarContainer}>
 
                 <div className={style.avatar}>
-                    <SVGConponent />
+                    <SVGConponent avatar={user.avatar} />
                 </div>
                 <div className={style.informationContainer}>
                     <h3>{`${user.name} ${user.surename}`}</h3>
@@ -26,6 +25,5 @@ const AvatarContainer: FC<Props> = ({ user }) => {
         </div>
     )
 }
-
 
 export default AvatarContainer

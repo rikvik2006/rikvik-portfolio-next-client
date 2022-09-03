@@ -1,25 +1,21 @@
-import axios from 'axios'
-import { GetServerSidePropsContext } from 'next'
+import Image from 'next/image'
 import { FC } from 'react'
-import { getCustomAvatar } from '../../utils/helpers/getCustomAvatar'
-import { User } from '../../utils/types'
+import style from "./index.module.scss";
 
 type Props = {
-
+    avatar: string;
 }
 
 
-const SVGConponent: FC<Props> = () => {
+const SVGConponent: FC<Props> = ({ avatar }) => {
+
 
     return (
-        <div>Ciao</div>
+        <img className={style.avatar}
+            src={avatar}
+            alt="Avatar"
+        />
     )
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-    const userInf = await getCustomAvatar(context);
-
-    return {}
 }
 
 export default SVGConponent
