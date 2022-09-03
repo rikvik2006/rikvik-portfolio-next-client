@@ -2,25 +2,41 @@ import { FC, useState, useEffect } from 'react'
 import style from "./nameSurname.module.scss";
 
 const NameSurname: FC = () => {
-    const [lengthName, setLengthName] = useState<number>(0);
-    const [lengthSurname, setLengthSurname] = useState<number>(0);
+    const [nameValue, setNameValue] = useState<string>("");
+    const [surNameValue, setSurNameValue] = useState<string>("");
     const [colorName, setColorName] = useState<string | undefined>(undefined)
     const [colorSurname, setColorSurname] = useState<string | undefined>(undefined)
 
-    useEffect(() => {
-        if (lengthName >= 2) setColorName("setColor")
-        else setColorName(undefined);
 
-        if (lengthSurname >= 2) setColorSurname("setColor");
+    useEffect(() => {
+        const RegEx = /^[a-zA-Z]{2,}$/g
+
+        const isValid = (field: string) => {
+            return RegEx.test(field);
+        }
+
+        if (isValid(nameValue)) setColorName("setColor")
+        else setColorName(undefined);
+    }, [nameValue])
+
+
+    useEffect(() => {
+        const RegEx = /^[a-zA-Z]{2,}$/g
+
+        const isValid = (field: string) => {
+            return RegEx.test(field);
+        }
+
+        if (isValid(surNameValue)) setColorSurname("setColor");
         else setColorSurname(undefined);
-    }, [lengthName, lengthSurname])
+    }, [surNameValue])
 
     const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setLengthName(event.currentTarget.value.length)
+        setNameValue(event.target.value)
     }
 
     const handleChangeSurname = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setLengthSurname(event.currentTarget.value.length)
+        setSurNameValue(event.target.value)
     }
 
     return (
