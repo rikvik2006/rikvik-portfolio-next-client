@@ -48,20 +48,19 @@ export const handleSubmitLoginContinue = async (event: React.FormEvent<HTMLFormE
     const senderSurname = <HTMLInputElement>event.currentTarget[1];
     const senderUsername = <HTMLInputElement>event.currentTarget[2];
 
-
     const requestBody = {
-        name: senderName,
-        surname: senderSurname,
-        username: senderUsername
+        name: senderName.value,
+        surname: senderSurname.value,
+        username: senderUsername.value
     }
 
     try {
-        const response = await axios.post("http://localhost:3001/auth/countiuelogin", requestBody, {
+        const response = await axios.post("http://localhost:3001/api/auth/continuelogin", requestBody, {
             withCredentials: true,
         })
 
         if (response) {
-            alert("Ok funziona")
+            window.location.replace("../../personalpage")
         }
     } catch (err) {
         console.log(err);
