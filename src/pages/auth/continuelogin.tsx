@@ -7,6 +7,7 @@ import { handleSubmitLoginContinue } from '../../utils/helpers/handleSubmitLogin
 import Link from 'next/link';
 import { TbUser } from 'react-icons/tb';
 import NameSurname from '../../components/login/nameSurname';
+import UsernameField from '../../components/login/usernameField';
 
 type Props = {}
 
@@ -14,13 +15,13 @@ type Props = {}
 const ContinueLogin: NextPage<Props> = () => {
     return (
         <>
-            <ErrorAllert error="Wrong credentials" />
+            <ErrorAllert error="An error occured, retry leater" />
             <div className={style.container}>
                 <form onSubmit={handleSubmitLoginContinue} className={style.form} >
                     <TbUser className={style.icon} />
                     <h3>Set your information</h3>
                     <NameSurname />
-                    <PasswordFiled isRegister={false} />
+                    <UsernameField />
 
                     <input className={style.submit} type="submit" value="Login" />
                 </form>
