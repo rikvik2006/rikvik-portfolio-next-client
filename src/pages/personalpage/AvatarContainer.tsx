@@ -18,7 +18,7 @@ const AvatarContainer: FC<Props> = ({ user }) => {
                     <SVGConponent avatar={user.avatar} />
                 </div>
                 <div className={style.informationContainer}>
-                    <h3>{`${user.name} ${user.surename}`}</h3>
+                    <h3>{`${user.name} ${user.surname}`}</h3>
                     <p>{user.username}</p>
                 </div>
             </div>

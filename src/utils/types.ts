@@ -20,7 +20,7 @@ export interface User {
     username: string;
     password: string;
     name: string;
-    surename: string;
+    surname: string;
     avatar: string;
     createdAt: Date;
 }
