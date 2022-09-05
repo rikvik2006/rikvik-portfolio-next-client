@@ -44,5 +44,35 @@ export const handleSubmitLogin = async (event: React.FormEvent<HTMLFormElement>)
 export const handleSubmitLoginContinue = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    const senderName = <HTMLInputElement>event.currentTarget[0];
+    const senderSurname = <HTMLInputElement>event.currentTarget[1];
+    const senderUsername = <HTMLInputElement>event.currentTarget[2];
+
+
+    const requestBody = {
+        name: senderName,
+        surname: senderSurname,
+        username: senderUsername
+    }
+
+    try {
+        const response = await axios.post("http://localhost:3001/auth/countiuelogin", requestBody, {
+            withCredentials: true,
+        })
+
+        if (response) {
+            alert("Ok funziona")
+        }
+    } catch (err) {
+        console.log(err);
+
+        const ErrorBox: HTMLElement | null = document.getElementById("ErrorBox")
+        ErrorBox!.style.visibility = "visible"
+        ErrorBox!.style.opacity = "1";
+        setTimeout(() => {
+            ErrorBox!.style.visibility = "hidden"
+            ErrorBox!.style.opacity = "0";
+        }, 3000)
+    }
 
 }
