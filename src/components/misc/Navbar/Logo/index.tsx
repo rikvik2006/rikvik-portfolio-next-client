@@ -1,4 +1,4 @@
-import { NextComponentType } from 'next'
+import { FC } from 'react'
 import Image from "next/image"
 import Link from 'next/link';
 import style from "./index.module.scss";
@@ -10,7 +10,7 @@ type Props = {
 
 
 
-const Logo: NextComponentType<Props> = () => {
+const Logo: FC<Props> = () => {
     return (
         <div className={style.logoContainer}>
             <Link href="/">

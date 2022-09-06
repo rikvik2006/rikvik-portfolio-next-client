@@ -1,13 +1,17 @@
-import { NextComponentType } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
+import { FC } from 'react';
 import { TbLogin, TbRocket } from "react-icons/tb/";
+import { getUserOrFalse } from '../../../../../utils/helpers/getUserOrFalse';
+import { User } from '../../../../../utils/types';
 import style from "./index.module.scss";
+import LoginOrPersonalPage from './loginOrPersonalPage';
 
-type Props = {}
+type Props = {
+    user: User;
+}
 
+const LoginTools: FC<Props> = ({ user }) => {
 
-const LoginTools: NextComponentType<Props> = () => {
     return (
         <div>
             <Link href="#" className={style.icons}>
@@ -15,11 +19,7 @@ const LoginTools: NextComponentType<Props> = () => {
                     <TbRocket className={style.icon} />
                 </a>
             </Link>
-            <Link href="/auth/login" className={style.icons}>
-                <a>
-                    <TbLogin className={style.icon} />
-                </a>
-            </Link>
+            <LoginOrPersonalPage user={user} />
         </div >
     )
 }

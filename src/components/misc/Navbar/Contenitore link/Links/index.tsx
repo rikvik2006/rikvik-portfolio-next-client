@@ -1,4 +1,4 @@
-import { NextComponentType } from 'next'
+import { FC } from "react";
 import Link from 'next/link';
 import style from "./index.module.scss";
 import { MdDesignServices } from "react-icons/md/"
@@ -8,7 +8,7 @@ import { TbBrandGithub, TbTags, TbMoodHappy } from "react-icons/tb";
 type Props = {}
 
 
-const Links: NextComponentType<Props> = () => {
+const Links: FC<Props> = () => {
     return (
         <div className={style.links}>
             <Link href="/">

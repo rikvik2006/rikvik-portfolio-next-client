@@ -1,14 +1,18 @@
-import { NextComponentType } from 'next'
+import { FC } from "react";
 import style from "./index.module.scss";
 import Logo from "./Logo";
 import LinkContainer from "./Contenitore link";
+import { User } from '../../../utils/types';
 
+type Props = {
+    user: User;
+}
 
-const Navbar: NextComponentType = () => {
+const Navbar: FC<Props> = ({ user }) => {
     return (
         <div className={style.topNav}>
             <Logo />
-            <LinkContainer />
+            <LinkContainer user={user} />
         </div>
     )
 }

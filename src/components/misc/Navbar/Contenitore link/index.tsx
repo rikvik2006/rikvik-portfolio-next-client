@@ -1,15 +1,18 @@
-import { NextComponentType } from 'next'
+import { FC } from "react";
+import { User } from "../../../../utils/types";
 import Links from "./Links";
 import LoginTools from "./LoginTools";
 
-type Props = {}
+type Props = {
+    user: User
+}
 
 
-const LinkContainer: NextComponentType<Props> = () => {
+const LinkContainer: FC<Props> = ({ user }) => {
     return (
         <>
             <Links />
-            <LoginTools />
+            <LoginTools user={user} />
         </>
     )
 }
