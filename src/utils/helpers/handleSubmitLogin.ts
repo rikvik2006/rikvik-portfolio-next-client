@@ -24,45 +24,9 @@ export const handleSubmitLogin = async (event: React.FormEvent<HTMLFormElement>)
         });
 
         if (response.status === 200) {
-            window.location.replace("../auth/continuelogin")
+            window.location.replace("../personalpage")
         }
     } catch (err: any) {
-        console.log(err);
-
-        const ErrorBox: HTMLElement | null = document.getElementById("ErrorBox")
-        ErrorBox!.style.visibility = "visible"
-        ErrorBox!.style.opacity = "1";
-        setTimeout(() => {
-            ErrorBox!.style.visibility = "hidden"
-            ErrorBox!.style.opacity = "0";
-        }, 3000)
-    }
-
-}
-
-
-export const handleSubmitLoginContinue = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const senderName = <HTMLInputElement>event.currentTarget[0];
-    const senderSurname = <HTMLInputElement>event.currentTarget[1];
-    const senderUsername = <HTMLInputElement>event.currentTarget[2];
-
-    const requestBody = {
-        name: senderName.value,
-        surname: senderSurname.value,
-        username: senderUsername.value
-    }
-
-    try {
-        const response = await axios.post("http://localhost:3001/api/auth/continuelogin", requestBody, {
-            withCredentials: true,
-        })
-
-        if (response) {
-            window.location.replace("../../personalpage")
-        }
-    } catch (err) {
         console.log(err);
 
         const ErrorBox: HTMLElement | null = document.getElementById("ErrorBox")
