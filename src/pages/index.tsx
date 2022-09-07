@@ -28,26 +28,16 @@ const Home: NextPage<SkilsProp> = ({ skils }) => {
             <hr />
             <div className={style.content}>
                 <h1>About <span className="colorGradient">Me</span></h1>
+
                 <div className={style.aboutMe}>
-                    <Image className={style.cardTall}
-                        src={"/logoHighRes.png"}
-                        alt="me.png"
-                        width={1000}
-                        height={1000}
-                    />
+                    <div className={style.cardTallContainer}>
+                        <img className={style.cardTall}
+                            src={"/logoHighRes.png"}
+                            alt="me.png"
+                        />
+                    </div>
 
                     <p>I started programming at the age of 11, starting with small electronic boards like arduino, from that point programming became one of my greatest passions along with video games. Another important step for my programming career was the discovery of DiscordJs a library that is used to communicate with the discord api and thanks to this you can create fantastic bots. Creating bots I became passionate about and my bot was my first big success. Thanks to this my knowledge expanded and from that point I decided to learn the backend side of websites, this topic I am also very passionate about. Besides that I am also passionate about electronics, game developing, 3D modeling and video making</p>
-
-                    <p>Ciao</p>
-                    <p>Ciao</p>
-                    <p>Ciao</p>
-                    <p>Ciao</p>
-                    <p>Ciao</p>
-                    <p>Ciao</p>
-                    <p>Ciao</p>
-                    <p>Ciao</p>
-                    <p>Ciao</p>
-                    <p>Ciao</p>
                 </div>
 
                 <h1>My <span className="colorGradient">Skills</span></h1>
