@@ -15,20 +15,14 @@ type ApppropsWithLayout = AppProps & {
     user: User;
 }
 
-function MyApp({ Component, pageProps }: ApppropsWithLayout) {
-    const getLayout = Component.getLayout ?? ((page) => <Layout user={pageProps}>{page}</Layout>);
+function MyApp({ Component, pageProps, user }: ApppropsWithLayout) {
+    const getLayout = Component.getLayout ?? ((page) => <Layout user={user}>{page}</Layout>);
     console.log("---User From app---")
     console.log(pageProps);
 
     return (
         getLayout(<Component {...pageProps} />)
     )
-}
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-    console.log("---Context---")
-    console.log(context);
-    return getUserOrFalse(context);
 }
 
 export default MyApp
