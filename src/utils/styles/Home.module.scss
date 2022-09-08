@@ -242,6 +242,7 @@
   // width: calc(720px + 2rem);
   width: 720px;
   margin: auto;
+  margin-bottom: 2.5em;
 
   grid-template-columns: repeat(auto-fit, minmax(240px, 2fr));
   grid-template-rows: repeat(2, 240px);
