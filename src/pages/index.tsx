@@ -18,7 +18,7 @@ const Home: NextPage<SkilsProp> = ({ skils }) => {
             <div className={style.heroHead}>
                 <div className="spacer layer1" />
                 <div className={style.heroContent}>
-                    <h1>Hi, i am Riccardo Bussano a 15-year-old <div className="colorGradient">aspiring Software Engineer.</div></h1>
+                    <h1>Hi, i am Riccardo Bussano a 16-year-old <div className="colorGradient">aspiring Software Engineer.</div></h1>
                     <p>
                         Hi i am Riccardo an Italian junior developer, based in Turin.<br />
                         I love build web apps, backand side, and everything in beetween.
