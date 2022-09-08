@@ -9,3 +9,11 @@ export const validateCookies = (ctx: GetServerSidePropsContext) => {
         Cookie: `connect.sid=${sessionID}`
     } : false;
 }
+
+export const validateCookiesContinueRegister = (cxt: GetServerSidePropsContext) => {
+    const userID = cxt.req.cookies["id"]
+
+    return userID ? {
+        Cookie: `id=${userID}`
+    } : false;
+}
