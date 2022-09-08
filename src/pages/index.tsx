@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { GetServerSideProps, GetServerSidePropsContext, GetStaticPropsContext, NextPage } from 'next'
+import { GetServerSideProps, GetServerSidePropsContext, GetStaticPropsContext, NextPage } from 'next'
 import Image from 'next/image';
 import style from '../utils/styles/Home.module.scss'
 import { Skil } from "../utils/types";
