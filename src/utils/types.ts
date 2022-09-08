@@ -24,3 +24,7 @@ export interface User {
     avatar: string;
     createdAt: Date;
 }
+
+export type HeadersType = {
+    headers: string | boolean;
+}

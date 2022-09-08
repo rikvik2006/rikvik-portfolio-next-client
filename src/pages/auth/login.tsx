@@ -1,4 +1,4 @@
-import { NextPage } from 'next'
+import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next'
 import style from "./index.module.scss";
 import { TbUser } from "react-icons/tb";
 import EmailField from "../../components/login/emailFiled";
@@ -6,11 +6,13 @@ import PasswordFiled from '../../components/login/passwordFiled';
 import Link from 'next/link';
 import { handleSubmitLogin } from '../../utils/helpers/handleSubmitLogin';
 import ErrorAllert from "../../components/errrorAllert";
+import { HeadersType } from '../../utils/types';
+import { validateCookies } from '../../utils/helpers/validateCookies';
 
-type Props = {}
 
+const LoginPage: NextPage<HeadersType> = ({ headers }) => {
 
-const LoginPage: NextPage<Props> = () => {
+    if (headers) window.location.replace("../../personalpage")
 
     return (
         <>
@@ -28,6 +30,16 @@ const LoginPage: NextPage<Props> = () => {
             </div>
         </>
     )
+}
+
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
+    const headers = validateCookies(context);
+
+    return {
+        props: {
+            headers: headers,
+        }
+    }
 }
 
 export default LoginPage

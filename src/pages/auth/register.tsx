@@ -1,4 +1,4 @@
-import { NextPage } from 'next'
+import { GetServerSidePropsContext, NextPage } from 'next'
 import style from "./index.module.scss";
 import { TbUserPlus } from "react-icons/tb";
 import Link from "next/link";
@@ -6,12 +6,14 @@ import EmailField from '../../components/login/emailFiled';
 import PasswordFiled from '../../components/login/passwordFiled';
 import ConfirmPasswordField from '../../components/login/confimPasswordField';
 import { handleSubmitRegister } from "../../utils/helpers/hadleSubmitResisterPage";
+import { validateCookies } from '../../utils/helpers/validateCookies';
+import { HeadersType } from '../../utils/types';
 
 
-type Props = {}
+const RegisterPage: NextPage<HeadersType> = ({ headers }) => {
 
+    if (headers) window.location.replace("../../personalpage")
 
-const RegisterPage: NextPage<Props> = () => {
     return (
         <div className={style.container}>
             <form onSubmit={handleSubmitRegister} className={style.form} >
@@ -22,10 +24,20 @@ const RegisterPage: NextPage<Props> = () => {
                 <PasswordFiled isRegister={true} />
                 <ConfirmPasswordField />
 
-                <input className={style.submit} type="submit" value="Login" />
+                <input className={style.submit} type="submit" value="Register" />
             </form>
         </div>
     )
+}
+
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
+    const headers = validateCookies(context);
+
+    return {
+        props: {
+            headers: headers,
+        }
+    }
 }
 
 export default RegisterPage
