@@ -37,7 +37,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    color-scheme: dark;
+  color-scheme: dark;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -126,7 +126,7 @@ p {
 
 @media (max-width: 600px) {
   .layer1 {
-    background-image: url("../../../public/hero-waves-min600px.svg");
+    background-image: url("../../../public/layered-waves-phone-purple2.svg");
   }
 }
 
