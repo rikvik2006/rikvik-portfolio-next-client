@@ -7,12 +7,11 @@ import PasswordFiled from '../../components/login/passwordFiled';
 import ConfirmPasswordField from '../../components/login/confimPasswordField';
 import { handleSubmitRegister } from "../../utils/helpers/hadleSubmitResisterPage";
 import { validateCookies } from '../../utils/helpers/validateCookies';
-import { HeadersType } from '../../utils/types';
 
 
-const RegisterPage: NextPage<HeadersType> = ({ headers }) => {
+const RegisterPage: NextPage = () => {
 
-    if (headers) window.location.replace("../../personalpage")
+    // if (headers) window.location.replace("../../personalpage")
 
     return (
         <div className={style.container}>
@@ -33,10 +32,10 @@ const RegisterPage: NextPage<HeadersType> = ({ headers }) => {
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
     const headers = validateCookies(context);
 
-    return {
-        props: {
-            headers: headers,
-        }
+    return headers ? {
+        redirect: { destination: "../../personalpage" }
+    } : {
+        props: {}
     }
 }
 

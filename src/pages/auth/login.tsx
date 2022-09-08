@@ -6,13 +6,10 @@ import PasswordFiled from '../../components/login/passwordFiled';
 import Link from 'next/link';
 import { handleSubmitLogin } from '../../utils/helpers/handleSubmitLogin';
 import ErrorAllert from "../../components/errrorAllert";
-import { HeadersType } from '../../utils/types';
 import { validateCookies } from '../../utils/helpers/validateCookies';
 
 
-const LoginPage: NextPage<HeadersType> = ({ headers }) => {
-
-    if (headers) window.location.replace("../../personalpage")
+const LoginPage: NextPage = () => {
 
     return (
         <>
@@ -35,10 +32,10 @@ const LoginPage: NextPage<HeadersType> = ({ headers }) => {
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
     const headers = validateCookies(context);
 
-    return {
-        props: {
-            headers: headers,
-        }
+    return headers ? {
+        redirect: { destination: "../../personalpage" }
+    } : {
+        props: {}
     }
 }
 
