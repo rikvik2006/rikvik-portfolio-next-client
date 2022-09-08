@@ -23,7 +23,7 @@ const ContinueLogin: NextPage<Props> = () => {
                     <NameSurname />
                     <UsernameField />
 
-                    <input className={style.submit} type="submit" value="Login" />
+                    <input className={style.submit} type="submit" value="Save information" />
                 </form>
             </div>
         </>
