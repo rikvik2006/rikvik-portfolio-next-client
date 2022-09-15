@@ -4,15 +4,14 @@ import Links from "./Links";
 import LoginTools from "./LoginTools";
 
 type Props = {
-    user: User
 }
 
 
-const LinkContainer: FC<Props> = ({ user }) => {
+const LinkContainer: FC<Props> = () => {
     return (
         <>
             <Links />
-            <LoginTools user={user} />
+            <LoginTools />
         </>
     )
 }

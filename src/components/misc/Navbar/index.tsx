@@ -5,14 +5,13 @@ import LinkContainer from "./Contenitore link";
 import { User } from '../../../utils/types';
 
 type Props = {
-    user: User;
 }
 
-const Navbar: FC<Props> = ({ user }) => {
+const Navbar: FC<Props> = () => {
     return (
         <div className={style.topNav}>
             <Logo />
-            <LinkContainer user={user} />
+            <LinkContainer />
         </div>
     )
 }
