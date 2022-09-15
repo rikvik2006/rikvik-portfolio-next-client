@@ -5,7 +5,7 @@ import { User } from "../../../../../utils/types";
 import style from "./index.module.scss";
 
 type UserProp = {
-    user: User;
+    user: User | boolean;
 }
 
 
