@@ -1,6 +1,11 @@
 .logo {
-    border-radius: 50%;
     margin: 0 10px;
+    rotate: 8.5deg;
+    transition: ease-in-out 0.2s all;
+}
+
+.logo:hover {
+    rotate: -10deg;
 }
 
 .logoContainer {

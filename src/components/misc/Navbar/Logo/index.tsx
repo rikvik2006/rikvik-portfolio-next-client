@@ -17,7 +17,7 @@ const Logo: FC<Props> = () => {
                 <a>
                     <Image
                         className={style.logo}
-                        src="/logo.png"
+                        src="/logoHover.svg"
                         alt="logo"
                         width={40}
                         height={40}
