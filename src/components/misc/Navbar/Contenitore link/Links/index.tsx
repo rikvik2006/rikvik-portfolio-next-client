@@ -11,7 +11,7 @@ type Props = {}
 const Links: FC<Props> = () => {
     return (
         <div className={style.links}>
-            <Link href="/">
+            <Link href="/#about_me">
                 <a className={style.link}>
                     <TbMoodHappy className={style.icon} />
                     About me

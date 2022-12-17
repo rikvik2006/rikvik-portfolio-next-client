@@ -29,7 +29,7 @@ const Home: NextPage<SkilsProp> = ({ skils }) => {
             <div className={style.content}>
                 <h1>About <span className="colorGradient">Me</span></h1>
 
-                <div className={style.aboutMe}>
+                <div className={style.aboutMe} id="about_me">
                     <div className={style.cardTallContainer}>
                         <img className={style.cardTall}
                             src={"/logoHighRes.png"}
