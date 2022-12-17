@@ -6,11 +6,11 @@ import { getUserOrFalse } from "../../utils/helpers/getUserOrFalse";
 import { User } from "../../utils/types";
 import { GetServerSidePropsContext } from "next";
 
-function Layout({ children, user }: { children: ReactElement, user: User }) {
+function Layout({ children }: { children: ReactElement }) {
     return (
         <>
             <div className={style.layoutStyle}>
-                <Navbar user={user} />
+                <Navbar />
                 <main>{children}</main>
                 <FooterComponet />
             </div>

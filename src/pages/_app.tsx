@@ -12,13 +12,10 @@ type NextPageWithLayout = NextPage & {
 
 type ApppropsWithLayout = AppProps & {
     Component: NextPageWithLayout;
-    user: User;
 }
 
-function MyApp({ Component, pageProps, user }: ApppropsWithLayout) {
-    const getLayout = Component.getLayout ?? ((page) => <Layout user={user}>{page}</Layout>);
-    console.log("---User From app---")
-    console.log(pageProps);
+function MyApp({ Component, pageProps }: ApppropsWithLayout) {
+    const getLayout = Component.getLayout ?? ((page) => <Layout >{page}</Layout>);
 
     return (
         getLayout(<Component {...pageProps} />)
