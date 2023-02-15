@@ -30,6 +30,9 @@ const LoginPage: NextPage = () => {
 }
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
+    //TO FIX: If user modify the session, the login can't be access, beccouse the sessions exist but isn't valid
+    //Step to reproduce, LogIn, Modify the connect.sid session, try to access to the login page
+
     const headers = validateCookies(context);
 
     return headers ? {

@@ -33,8 +33,8 @@ export const handleSubmitLogin = async (event: React.FormEvent<HTMLFormElement>)
         ErrorBox!.style.visibility = "visible"
         ErrorBox!.style.opacity = "1";
         setTimeout(() => {
-            ErrorBox!.style.visibility = "hidden"
             ErrorBox!.style.opacity = "0";
+            ErrorBox!.style.visibility = "hidden"
         }, 3000)
     }
 
