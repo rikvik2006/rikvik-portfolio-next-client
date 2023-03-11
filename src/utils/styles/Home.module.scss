@@ -116,13 +116,16 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }
@@ -207,7 +210,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   i {
     transition: all 0.2s ease-in-out;
   }
@@ -223,7 +226,7 @@
     color: var(--gray1);
   }
 
-  i:hover + div {
+  i:hover+div {
     position: absolute;
     visibility: visible;
     opacity: 1;
@@ -260,36 +263,34 @@
       height: 100%;
       border-radius: 20px 40px 20px 40px;
       box-shadow: 7px 7px 10px rgb(0, 0, 0, .38)
-
     }
   }
 }
 
-@media (max-width: 1100px ) {
+@media (max-width: 1100px) {
   .aboutMe {
     display: grid;
     gap: 2rem;
     // width: calc(720px + 2rem);
     margin: auto;
     width: auto;
-  
+
     grid-template-columns: 240px;
     grid-template-rows: repeat(2, 1fr);
     // grid-auto-rows: 240px;
-  
-  
+
+
     .cardTallContainer {
-  
+
       // grid-row: span 2 / auto;
       // object-fit: contain;
       aspect-ratio: 2448/3264;
-  
+
       .cardTall {
         width: 100%;
         height: 100%;
         border-radius: 20px 40px 20px 40px;
         box-shadow: 7px 7px 10px rgb(0, 0, 0, .38)
-  
       }
     }
   }
