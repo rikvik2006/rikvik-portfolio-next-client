@@ -6,6 +6,7 @@ import { getUserOrFalse } from '../../../../../utils/helpers/getUserOrFalse';
 import { User } from '../../../../../utils/types';
 import style from "./index.module.scss";
 import LoginOrPersonalPage from './loginOrPersonalPage';
+import toast from "react-hot-toast"
 
 type Props = {
 
@@ -27,15 +28,17 @@ const LoginTools: FC<Props> = () => {
             })
     }, [])
 
+    const notAvailable = () => toast.error("Premium subscription isn't available at the moment")
     return (
+
         <div>
             <Link href="#" className={style.icons}>
-                <a>
+                <a onClick={notAvailable}>
                     <TbRocket className={style.icon} />
                 </a>
             </Link>
             <LoginOrPersonalPage user={user} />
-        </div >
+        </div>
     )
 }
 

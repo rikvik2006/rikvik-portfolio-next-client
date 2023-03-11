@@ -4,13 +4,11 @@ import Image from 'next/image';
 import style from '../utils/styles/Home.module.scss'
 import { Skil } from "../utils/types";
 
-
 type SkilsProp = {
     skils: Skil[];
 }
 
 const Home: NextPage<SkilsProp> = ({ skils }) => {
-
     return (
         <>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />

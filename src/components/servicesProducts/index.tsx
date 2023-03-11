@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Product } from "../../utils/types";
 import style from "./index.module.scss";
 import DescriptionComponent from './description';
+import toast from "react-hot-toast";
 
 type Props = {
     product: Product
@@ -10,9 +11,9 @@ type Props = {
 
 
 const ProductComponent: FC<Props> = ({ product }) => {
+    const notAvailable = () => toast.error("Not available at the moment")
+
     return (
-
-
         <div className={style.container}>
             <div className={style.containerIcon}>
                 <Image
@@ -48,7 +49,7 @@ const ProductComponent: FC<Props> = ({ product }) => {
             </div>
 
             <div className={style.buttonContainer}>
-                <input type="button" value="Buy" />
+                <input type="button" value="Buy" onClick={notAvailable} />
             </div>
 
         </div >

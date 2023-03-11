@@ -11,7 +11,7 @@
     margin: 1.2em;
     padding-top: 3em;
 
-    
+
     .containerTitle {
 
         margin: 1em 0;
@@ -23,7 +23,7 @@
     }
 
     .containerPrice {
-        
+
         span {
             font-size: 2em;
             font-weight: bold;
@@ -39,7 +39,7 @@
 
     .containerHr {
 
-        
+
         .hr {
             border: none;
             border-top: 2px dashed var(--gray5);
@@ -47,7 +47,7 @@
             margin-left: 0;
             margin-right: 0;
             background-color: red;
-            
+
         }
     }
 
@@ -71,10 +71,10 @@
                 content: "]";
                 color: var(--yellow);
                 font-size: 1.2em;
-                
+
             }
         }
-        
+
     }
 
     .containerQty {
@@ -97,10 +97,12 @@
     .containerDescription {
         align-self: flex-start;
         font-family: "Poppins", sans-serif;
+
         ul {
             li {
                 list-style: none;
                 margin: 0.3em 0;
+
                 &::before {
                     content: "✅";
                     margin-right: 0.2em;
@@ -109,7 +111,7 @@
         }
     }
 
-    .containerIcon  {
+    .containerIcon {
 
         margin-top: 1em;
 
@@ -131,7 +133,7 @@
             width: 100%;
             padding: 0.5em;
             font-size: 1em;
-            margin: 1em;
+            margin: 1em 0;
             background-color: var(--yellow);
             border: none;
             border-radius: 5px;
