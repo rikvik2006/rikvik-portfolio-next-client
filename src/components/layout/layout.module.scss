@@ -1,6 +1,11 @@
 .layoutStyle {
+    position: relative;
+    min-height: 100vh;
+
     main {
+        box-sizing: border-box;
         padding: 1rem;
         padding-top: 5em;
+        min-height: calc(100vh - clamp(5em, 3em, 4em));
     }
 }
