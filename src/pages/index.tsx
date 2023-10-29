@@ -3,12 +3,18 @@ import { GetServerSideProps, GetServerSidePropsContext, GetStaticPropsContext, N
 import Image from 'next/image';
 import style from '../utils/styles/Home.module.scss'
 import { Skil } from "../utils/types";
+import { ConditionalRenderingContext } from '../utils/contexts/conditionalRendering';
+import { useContext } from 'react';
 
 type SkilsProp = {
     skils: Skil[];
+    renderServicies: boolean;
 }
 
-const Home: NextPage<SkilsProp> = ({ skils }) => {
+const Home: NextPage<SkilsProp> = ({ skils, renderServicies }) => {
+    const { setRenderServicies } = useContext(ConditionalRenderingContext);
+    setRenderServicies(renderServicies);
+
     return (
         <>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
@@ -16,7 +22,7 @@ const Home: NextPage<SkilsProp> = ({ skils }) => {
             <div className={style.heroHead}>
                 <div className="spacer layer1" />
                 <div className={style.heroContent}>
-                    <h1>Hi, i am Riccardo Bussano a 16-year-old <div className="colorGradient">aspiring Software Engineer.</div></h1>
+                    <h1>Hi, i am Riccardo Bussano a 17-year-old <div className="colorGradient">aspiring Software Engineer.</div></h1>
                     <p>
                         Hi i am Riccardo an Italian junior developer, based in Turin.<br />
                         I love build web apps, backand side, and everything in beetween.
@@ -30,7 +36,7 @@ const Home: NextPage<SkilsProp> = ({ skils }) => {
                 <div className={style.aboutMe} id="about_me">
                     <div className={style.cardTallContainer}>
                         <img className={style.cardTall}
-                            src={"/logoHighRes.png"}
+                            src={"/aboutMePfp.jpg"}
                             alt="me.png"
                         />
                     </div>
@@ -172,11 +178,11 @@ const Home: NextPage<SkilsProp> = ({ skils }) => {
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-
-    const { data: skils } = await axios.get<SkilsProp>("http://localhost:3001/api/skils/")
+    const { data: skils } = await axios.get<SkilsProp>("http://localhost:3001/api/skils/");
+    const renderServicies = process.env.RENDER_SERVICES == "true"
 
     return {
-        props: { skils }
+        props: { skils, renderServicies }
     }
 }
 
