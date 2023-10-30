@@ -7,9 +7,16 @@ import Link from 'next/link';
 import { handleSubmitLogin } from '../../utils/helpers/handleSubmitLogin';
 import ErrorAllert from "../../components/errrorAllert";
 import { validateCookies } from '../../utils/helpers/validateCookies';
+import { useContext } from 'react';
+import { ConditionalRenderingContext } from '../../utils/contexts/conditionalRendering';
 
+type Props = {
+    renderServicies: boolean;
+}
 
-const LoginPage: NextPage = () => {
+const LoginPage: NextPage<Props> = ({ renderServicies }) => {
+    const { setRenderServicies } = useContext(ConditionalRenderingContext)
+    setRenderServicies(renderServicies);
 
     return (
         <>
@@ -34,11 +41,12 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
     //Step to reproduce, LogIn, Modify the connect.sid session, try to access to the login page
 
     const headers = validateCookies(context);
+    const renderServices = process.env.RENDER_SERVICES == "true";
 
     return headers ? {
         redirect: { destination: "../../personalpage" }
     } : {
-        props: {}
+        props: { renderServices }
     }
 }
 

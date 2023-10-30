@@ -7,10 +7,16 @@ import PasswordFiled from '../../components/login/passwordFiled';
 import ConfirmPasswordField from '../../components/login/confimPasswordField';
 import { handleSubmitRegister } from "../../utils/helpers/hadleSubmitResisterPage";
 import { validateCookies } from '../../utils/helpers/validateCookies';
+import { useContext } from 'react';
+import { ConditionalRenderingContext } from '../../utils/contexts/conditionalRendering';
 
+type Props = {
+    renderServicies: boolean;
+}
 
-const RegisterPage: NextPage = () => {
-
+const RegisterPage: NextPage<Props> = ({ renderServicies }) => {
+    const { setRenderServicies } = useContext(ConditionalRenderingContext);
+    setRenderServicies(renderServicies);
     // if (headers) window.location.replace("../../personalpage")
 
     return (
@@ -31,11 +37,12 @@ const RegisterPage: NextPage = () => {
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
     const headers = validateCookies(context);
+    const renderServices = process.env.RENDER_SERVICIES == "true";
 
     return headers ? {
         redirect: { destination: "../../personalpage" }
     } : {
-        props: {}
+        props: { renderServices }
     }
 }
 
