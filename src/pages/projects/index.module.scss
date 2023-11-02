@@ -1,0 +1,7 @@
+.container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1 1fr;
+    grid-template-rows: repeat(1, calc(100vh - clamp(5em, 3em, 4em)));
+    margin: 5rem 0;
+}
