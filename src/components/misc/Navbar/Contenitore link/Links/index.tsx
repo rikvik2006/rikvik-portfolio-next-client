@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect, useRef } from "react";
+import { FC, RefObject, useContext, useEffect, useRef } from "react";
 import Link from 'next/link';
 import style from "./index.module.scss";
 import { MdDesignServices } from "react-icons/md/"
@@ -7,21 +7,18 @@ import toast from "react-hot-toast"
 import { ConditionalRenderingContext } from "../../../../../utils/contexts/conditionalRendering";
 
 type Props = {
-    setToggleMobileNavbar: (f: () => void) => void
+    getNavbarRef: (ref: RefObject<HTMLDivElement>) => void;
 }
 
 
-const Links: FC<Props> = ({ setToggleMobileNavbar }) => {
+const Links: FC<Props> = ({ getNavbarRef }) => {
     const notAvailable = () => toast.error("Not available at the moment");
     const { renderServicies } = useContext(ConditionalRenderingContext);
     const linksContainerRef = useRef<HTMLDivElement>(null);
 
-    const toggleMobileNavbar = () => {
-        linksContainerRef.current?.classList.toggle(style.toggleNav);
-    }
 
     useEffect(() => {
-        setToggleMobileNavbar(toggleMobileNavbar);
+        getNavbarRef(linksContainerRef);
     })
 
     return (

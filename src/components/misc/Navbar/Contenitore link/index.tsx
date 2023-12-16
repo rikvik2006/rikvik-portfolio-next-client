@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, RefObject, useState } from "react";
 import { User } from "../../../../utils/types";
 import Links from "./Links";
 import LoginTools from "./LoginTools";
@@ -8,14 +8,16 @@ type Props = {
 
 
 const LinkContainer: FC<Props> = () => {
-    const [toggleMobileNavbar, setToggleMobileNavbar] = useState<() => void>();
+    const [navbarRef, setNavbarRef] = useState<RefObject<HTMLDivElement>>();
 
-    console.log("⚠️", toggleMobileNavbar)
+    const getNavbarRef = (navbarRef: RefObject<HTMLDivElement>) => {
+        setNavbarRef(navbarRef);
+    }
 
     return (
         <>
-            <Links setToggleMobileNavbar={setToggleMobileNavbar} />
-            <LoginTools toggleMobileNavbar={toggleMobileNavbar} />
+            <Links getNavbarRef={getNavbarRef} />
+            <LoginTools navbarRef={navbarRef} />
         </>
     )
 }

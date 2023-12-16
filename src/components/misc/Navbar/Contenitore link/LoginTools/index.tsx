@@ -1,15 +1,16 @@
 import axios from 'axios';
 import Link from 'next/link'
-import { FC, useState, useEffect } from 'react';
+import { FC, useState, useEffect, RefObject } from 'react';
 import { TbLogin, TbMenu2, TbRocket } from "react-icons/tb/";
 import { getUserOrFalse } from '../../../../../utils/helpers/getUserOrFalse';
 import { User } from '../../../../../utils/types';
 import style from "./index.module.scss";
+import linksStyle from "../Links/index.module.scss"
 import LoginOrPersonalPage from './loginOrPersonalPage';
 import toast from "react-hot-toast"
 
 type Props = {
-    toggleMobileNavbar: (() => void) | undefined;
+    navbarRef: RefObject<HTMLDivElement> | undefined;
 }
 
 type WindowSizeType = {
@@ -17,10 +18,10 @@ type WindowSizeType = {
     innerHeight: number;
 }
 
-const LoginTools: FC<Props> = ({ toggleMobileNavbar }) => {
+const LoginTools: FC<Props> = ({ navbarRef }) => {
 
     const [user, setUser] = useState<User | boolean>(false);
-    const [windowSize, setWindowSize] = useState<WindowSizeType>({ innerWidth: 0, innerHeight: 0 });
+    const [windowSize, setWindowSize] = useState<WindowSizeType>({ innerWidth: 1920, innerHeight: 1080 });
 
 
     useEffect(() => {
@@ -51,18 +52,18 @@ const LoginTools: FC<Props> = ({ toggleMobileNavbar }) => {
         }
     }, [])
 
+    // Get window size on first render
+    useEffect(() => {
+        const handleWindowResize = () => {
+            setWindowSize(getWindowSize());
+        }
 
-    // function getWindowSize() {
-    //     console.log("⚠️ Window", window)
-    //     if (typeof window !== "undefined") {
-    //         const { innerHeight, innerWidth } = window
-    //         return { innerHeight, innerWidth }
-    //     }
+        handleWindowResize();
+    }, [])
 
-    //     return { innerHeight: 1440, innerWidth: 2560 }
-    // }
-
-    console.log()
+    const toggleMobileNavbar = () => {
+        navbarRef!.current?.classList.toggle(linksStyle.toggleNav);
+    }
 
     return (
 
