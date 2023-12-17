@@ -2,7 +2,7 @@ import { FC, RefObject, useContext, useEffect, useRef } from "react";
 import Link from 'next/link';
 import style from "./index.module.scss";
 import { MdDesignServices } from "react-icons/md/"
-import { TbBrandGithub, TbTags, TbMoodHappy, TbMenu2 } from "react-icons/tb";
+import { TbBrandGithub, TbTags, TbMoodHappy, TbArrowUpRight } from "react-icons/tb";
 import toast from "react-hot-toast"
 import { ConditionalRenderingContext } from "../../../../../utils/contexts/conditionalRendering";
 
@@ -21,11 +21,15 @@ const Links: FC<Props> = ({ getNavbarRef }) => {
         getNavbarRef(linksContainerRef);
     })
 
+    const toggleMobileNavbar = () => {
+        linksContainerRef.current?.classList.toggle(style.toggleNav);
+    }
+
     return (
         <>
             <div ref={linksContainerRef} className={`${style.links}`}>
                 <Link href="/#about_me">
-                    <a className={style.link}>
+                    <a onClick={toggleMobileNavbar} className={style.link}>
                         <TbMoodHappy className={style.icon} />
                         About me
                     </a>
@@ -39,19 +43,20 @@ const Links: FC<Props> = ({ getNavbarRef }) => {
                 </Link>
 
                 {renderServicies && <Link href="/services">
-                    <a className={style.link}>
+                    <a onClick={toggleMobileNavbar} className={style.link}>
                         <TbTags className={style.icon} />
                         Services
                     </a>
                 </Link>}
 
                 <Link href="https://github.com/rikvik2006">
-                    <a className={style.link} target="_blank">
+                    <a onClick={toggleMobileNavbar} className={`${style.redirectContainer} ${style.link}`} target="_blank">
                         <TbBrandGithub className={style.icon} />
                         GitHub
+                        <TbArrowUpRight className={style.redirectIcon} />
                     </a>
                 </Link>
-            </div>
+            </div >
         </>
     )
 }

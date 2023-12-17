@@ -10,10 +10,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .redirectIcon {
+        visibility: hidden;
+    }
 }
 
 .link:hover {
     color: white;
+}
+
+.redirectContainer {
+    display: flex;
+    justify-content: space-between;
 }
 
 .icon {
@@ -54,6 +63,11 @@
 
         &:last-child {
             border-bottom: 2px solid var(--gray3);
+        }
+
+        .redirectIcon {
+            visibility: visible;
+            margin-left: auto;
         }
     }
 
