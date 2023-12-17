@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import style from "./index.module.scss";
 
 type Props = {
@@ -8,8 +8,6 @@ type Props = {
 
 
 const SVGConponent: FC<Props> = ({ avatar }) => {
-
-
     return (
         <img className={style.avatar}
             src={avatar}
