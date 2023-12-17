@@ -2,6 +2,11 @@
     display: flex;
 }
 
+.iconsContainer {
+    display: flex;
+    justify-content: center;
+}
+
 .icon {
     color: var(--gray3);
     height: 1.4em;
@@ -18,3 +23,11 @@
     color: white;
 }
 
+button.toggleNav {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-style: none;
+    background-color: transparent;
+}

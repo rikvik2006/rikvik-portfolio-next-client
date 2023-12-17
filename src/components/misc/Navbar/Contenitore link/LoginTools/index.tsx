@@ -66,9 +66,7 @@ const LoginTools: FC<Props> = ({ navbarRef }) => {
     }
 
     return (
-
-
-        <div>
+        <div className={style.iconsContainer}>
             <Link href="#" className={style.icons}>
                 <a onClick={notAvailable}>
                     <TbRocket className={style.icon} />
@@ -76,7 +74,7 @@ const LoginTools: FC<Props> = ({ navbarRef }) => {
             </Link>
             {windowSize.innerWidth > 750 ?
                 <LoginOrPersonalPage user={user} /> :
-                <button onClick={toggleMobileNavbar}><TbMenu2 /></button>
+                <button className={`${style.toggleNav}`} onClick={toggleMobileNavbar}><TbMenu2 className={`${style.icon}`} /></button>
             }
         </div>
     )
