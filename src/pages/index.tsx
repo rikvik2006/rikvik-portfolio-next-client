@@ -126,17 +126,17 @@ const Home: NextPage<SkilsProp> = ({ skils, renderServicies }) => {
 
                     <div className={style.iconContainer}>
                         <i className="devicon-firebase-plain" />
-                        <div>Firebase | DevOps</div>
+                        <div>Firebase | BaaS</div>
                     </div>
 
                     <div className={style.iconContainer}>
                         <i className="devicon-heroku-original" />
-                        <div>Heroku | DevOps</div>
+                        <div>Heroku | PaaS</div>
                     </div>
 
                     <div className={style.iconContainer}>
                         <i className="devicon-googlecloud-plain" />
-                        <div>GoogleCloud | DevOps</div>
+                        <div>GoogleCloud | IaaS</div>
                     </div>
 
                     <div className={style.iconContainer}>
