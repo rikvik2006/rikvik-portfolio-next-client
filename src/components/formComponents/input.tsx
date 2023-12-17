@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, useEffect, useState } from "react";
-import style from "./index.module.scss";
+import style from "./input.module.scss";
 
 interface InputProps extends HTMLAttributes<HTMLInputElement> {
     // Custom atributes
@@ -16,11 +16,11 @@ const Input: FC<InputProps> = ({ label, type = "text", regExp, trim, ...props })
     useEffect(() => {
         if (!regExp) return;
 
-        const isValidUsername = (username: string) => {
-            return regExp.test(username);
+        const isValidUsername = (value: string) => {
+            return regExp.test(value);
         }
 
-        if (isValidUsername(value.trim())) {
+        if (isValidUsername(trim ? value.trim() : value)) {
             return setColor("setColor");
         } else {
             return setColor(null);
@@ -28,7 +28,16 @@ const Input: FC<InputProps> = ({ label, type = "text", regExp, trim, ...props })
 
     }, [value, regExp])
 
+    useEffect(() => {
+        console.log("✅", color);
+    }, [color])
+
+    useEffect(() => {
+        console.log("🔗", value);
+    }, [value])
+
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        console.log("💱", event.currentTarget.value)
         setValue(event.currentTarget.value);
     }
 

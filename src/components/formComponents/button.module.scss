@@ -1,0 +1,45 @@
+.container {
+    padding: 0.5em;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.5s ease-in-out, box-shadow 100ms cubic-bezier(.4, 0, .2, 1);
+    ;
+    font-family: "Poppins", sans-serif;
+    width: 7rem;
+}
+
+.default {
+    background-color: var(--gray3);
+
+    &:hover {
+        background-color: var(--gray4);
+    }
+}
+
+.success {
+    background-color: var(--green-dark);
+
+    &:hover {
+        background-color: var(--green-light);
+    }
+
+    &:focus {
+        box-shadow: var(--button-shadow)
+    }
+}
+
+.danger {
+    background-color: var(--red);
+
+    &:hover {
+        background-color: var(--red-dark);
+    }
+}
+
+.warning {
+    background-color: var(--yellow);
+
+    &:hover {
+        background-color: var(--yellow-dark);
+    }
+}
