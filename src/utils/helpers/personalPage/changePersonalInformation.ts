@@ -10,10 +10,8 @@ type RequestBody = {
 export const changePersonalInformation = async (event: React.FormEvent<HTMLFormElement>) => {
     await event.preventDefault();
 
-    console.log("🚀 ~ file: changePersonalInformation.ts:14 ~ changePersonalInformation ~ currentTarget:", event.currentTarget.elements)
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(event.target as HTMLFormElement);
 
-    console.log("❤️", formData);
     const name: string = formData.get("name") as string;
     const surname: string = formData.get("surname") as string;
     const username: string = formData.get("username") as string;
@@ -24,9 +22,9 @@ export const changePersonalInformation = async (event: React.FormEvent<HTMLFormE
         username
     }
 
-    const requestBodyJson = JSON.stringify(requestBody);
+    console.log("❤️", requestBody);
 
-    const response = axios.put("localhost:3001/api/user/", requestBodyJson, {
+    const response = axios.put("http://localhost:3001/api/user/", requestBody, {
         withCredentials: true,
     });
 
