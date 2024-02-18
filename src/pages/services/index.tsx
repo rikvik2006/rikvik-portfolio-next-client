@@ -3,6 +3,7 @@ import ProductComponent from '../../components/servicesProducts';
 import { Product } from '../../utils/types';
 import style from "./index.module.scss";
 import axios from "axios";
+import { APIBaseUrl } from '../../utils/constants';
 
 type PropsWithProducts = {
     products: Product[]
@@ -28,7 +29,7 @@ const ServicesPage: NextPage<PropsWithProducts> = ({ products }) => {
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
 
-    const { data: products } = await axios.get<Product[]>("http://localhost:3001/api/services/")
+    const { data: products } = await axios.get<Product[]>(`${APIBaseUrl}/api/services/`)
 
     return {
         props: { products }

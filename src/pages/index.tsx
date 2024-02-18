@@ -5,6 +5,7 @@ import style from '../utils/styles/Home.module.scss'
 import { Skil } from "../utils/types";
 import { ConditionalRenderingContext } from '../utils/contexts/conditionalRendering';
 import { useContext } from 'react';
+import { APIBaseUrl } from '../utils/constants';
 
 type SkilsProp = {
     skils: Skil[];
@@ -178,7 +179,8 @@ const Home: NextPage<SkilsProp> = ({ skils, renderServicies }) => {
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-    const { data: skils } = await axios.get<SkilsProp>("http://localhost:3001/api/skils/");
+    console.log("📦 Server side log APIBaseURL:", APIBaseUrl)
+    const { data: skils } = await axios.get<SkilsProp>(`${APIBaseUrl}/api/skils/`);
     const renderServicies = process.env.RENDER_SERVICES == "true"
 
     return {

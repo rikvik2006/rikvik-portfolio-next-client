@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { withRouter } from "next/router";
+import { APIBaseUrl } from "../constants";
 
 export const handleSubmitRegister = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -16,7 +17,7 @@ export const handleSubmitRegister = async (event: React.FormEvent<HTMLFormElemen
 
 
     try {
-        const response = await axios.post("http://localhost:3001/api/auth/register", requestBody, {
+        const response = await axios.post(`${APIBaseUrl}/api/auth/register`, requestBody, {
             withCredentials: true,
         });
 
@@ -45,7 +46,7 @@ export const handleSubmitRegisterContinue = async (event: React.FormEvent<HTMLFo
     }
 
     try {
-        const response = await axios.post("http://localhost:3001/api/auth/continueregister", requestBody, {
+        const response = await axios.post(`${APIBaseUrl}/api/auth/continueregister`, requestBody, {
             withCredentials: true,
         })
 

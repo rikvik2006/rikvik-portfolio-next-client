@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { cookieJar } from "./cookie-jar";
+import { APIBaseUrl } from "../constants";
 
 export const handleSubmitLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -19,7 +20,7 @@ export const handleSubmitLogin = async (event: React.FormEvent<HTMLFormElement>)
 
 
     try {
-        const response = await axios.post("http://localhost:3001/api/auth/login", requestBody, {
+        const response = await axios.post(`${APIBaseUrl}/api/auth/login`, requestBody, {
             withCredentials: true,
         });
 

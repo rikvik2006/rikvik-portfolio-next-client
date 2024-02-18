@@ -1,5 +1,6 @@
 import axios from "axios";
 import toast from "react-hot-toast";
+import { APIBaseUrl } from "../../constants";
 
 type RequestBody = {
     name: string;
@@ -24,7 +25,7 @@ export const changePersonalInformation = async (event: React.FormEvent<HTMLFormE
 
     console.log("❤️", requestBody);
 
-    const response = axios.put("http://localhost:3001/api/user/", requestBody, {
+    const response = axios.put(`${APIBaseUrl}/api/user/`, requestBody, {
         withCredentials: true,
     });
 

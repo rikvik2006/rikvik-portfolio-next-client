@@ -1,4 +1,5 @@
 import axios from "axios";
+import { APIBaseUrl } from "../constants";
 
 type Data = {
     email: string;
@@ -19,7 +20,7 @@ const handleSubmit = async (event: any) => {
     console.log(data);
 
     const JSONdata = JSON.stringify(data);
-    const endPoint = "http://localhost:3001/api/auth/login"
+    const endPoint = `${APIBaseUrl}/api/auth/login`
 
     console.log(JSONdata);
 

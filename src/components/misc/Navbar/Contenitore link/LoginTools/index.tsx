@@ -8,6 +8,7 @@ import style from "./index.module.scss";
 import linksStyle from "../Links/index.module.scss"
 import LoginOrPersonalPage from './loginOrPersonalPage';
 import toast from "react-hot-toast"
+import { APIBaseUrl } from '../../../../../utils/constants';
 
 type Props = {
     navbarRef: RefObject<HTMLDivElement> | undefined;
@@ -25,7 +26,7 @@ const LoginTools: FC<Props> = ({ navbarRef }) => {
 
 
     useEffect(() => {
-        axios.get<User>("http://localhost:3001/api/user", {
+        axios.get<User>(`${APIBaseUrl}/api/user`, {
             withCredentials: true,
         })
             .then(({ data }) => {
