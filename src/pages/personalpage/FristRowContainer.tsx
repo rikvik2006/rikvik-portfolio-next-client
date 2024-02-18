@@ -3,15 +3,16 @@ import style from "./index.module.scss";
 import Input from "../../components/formComponents/input";
 import Button from "../../components/formComponents/button";
 import { changePersonalInformation } from "../../utils/helpers/personalPage/changePersonalInformation";
+import { personalInfoState } from "../../utils/types";
 
 type Prop = {
-
+    personalInfoState: personalInfoState;
 }
 
-const FristRowContainer: FC<Prop> = () => {
+const FristRowContainer: FC<Prop> = ({ personalInfoState }) => {
     return (
         <div className={style.fristRowContainer}>
-            <form className={style.inputsContainer} onSubmit={changePersonalInformation}>
+            <form className={style.inputsContainer} onSubmit={(event) => changePersonalInformation(event, personalInfoState)}>
                 <Input label="Name" regExp={/[a-zA-Z]{2,32}/} trim />
                 <Input label="Surname" regExp={/[a-zA-Z]{2,32}/} trim />
                 <Input label="Username" regExp={/[a-zA-Z0-9-_]{2,32}/} trim />

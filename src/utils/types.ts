@@ -29,3 +29,8 @@ export interface User {
 export type HeadersType = {
     headers: string | boolean;
 }
+
+export type personalInfoState = {
+    isPersonalInfoChanged: boolean;
+    setIsPersonalInfoChanged: (state: boolean) => void;
+}

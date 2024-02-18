@@ -1,6 +1,7 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import toast from "react-hot-toast";
 import { APIBaseUrl } from "../../constants";
+import { personalInfoState } from "../../types";
 
 type RequestBody = {
     name: string;
@@ -8,7 +9,7 @@ type RequestBody = {
     username: string;
 }
 
-export const changePersonalInformation = async (event: React.FormEvent<HTMLFormElement>) => {
+export const changePersonalInformation = async (event: React.FormEvent<HTMLFormElement>, personalInfoState: personalInfoState) => {
     await event.preventDefault();
 
     const formData = new FormData(event.target as HTMLFormElement);
@@ -29,9 +30,17 @@ export const changePersonalInformation = async (event: React.FormEvent<HTMLFormE
         withCredentials: true,
     });
 
-    toast.promise(response, {
-        success: "Saved!",
-        error: "An error occured",
-        loading: "Loading"
-    })
+    try {
+        const savedStatus = await toast.promise(response, {
+            success: "Saved!",
+            error: "An error occured",
+            loading: "Loading"
+        })
+
+        if (savedStatus.status == 200) {
+            personalInfoState.setIsPersonalInfoChanged(!personalInfoState.isPersonalInfoChanged)
+        }
+    } catch (err) {
+        personalInfoState.setIsPersonalInfoChanged(!personalInfoState.isPersonalInfoChanged)
+    }
 }
