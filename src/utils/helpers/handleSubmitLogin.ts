@@ -1,6 +1,5 @@
 import axios from "axios";
 import React from "react";
-import { cookieJar } from "./cookie-jar";
 import { APIBaseUrl } from "../constants";
 
 export const handleSubmitLogin = async (event: React.FormEvent<HTMLFormElement>) => {

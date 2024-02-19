@@ -1,8 +1,8 @@
 import { GetServerSidePropsContext, NextPage } from "next";
 import { getUser } from "../../utils/helpers/getUser";
 import { User } from "../../utils/types";
-import AvatarContainer from "./AvatarContainer";
-import FristRowContainer from "./FristRowContainer";
+import AvatarContainer from "../../components/personalPage/AvatarContainer";
+import FristRowContainer from "../../components/personalPage/FristRowContainer";
 import style from "./index.module.scss";
 import { useEffect, useInsertionEffect, useState } from "react";
 import axios from "axios";
