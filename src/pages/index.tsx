@@ -1,16 +1,21 @@
-import axios from 'axios';
-import { GetServerSideProps, GetServerSidePropsContext, GetStaticPropsContext, NextPage } from 'next'
-import Image from 'next/image';
-import style from '../utils/styles/Home.module.scss'
+import axios from "axios";
+import {
+    GetServerSideProps,
+    GetServerSidePropsContext,
+    GetStaticPropsContext,
+    NextPage,
+} from "next";
+import Image from "next/image";
+import style from "../utils/styles/Home.module.scss";
 import { Skil } from "../utils/types";
-import { ConditionalRenderingContext } from '../utils/contexts/conditionalRendering';
-import { useContext } from 'react';
-import { APIBaseUrl } from '../utils/constants';
+import { ConditionalRenderingContext } from "../utils/contexts/conditionalRendering";
+import { useContext } from "react";
+import { APIBaseUrl } from "../utils/constants";
 
 type SkilsProp = {
     skils: Skil[];
     renderServicies: boolean;
-}
+};
 
 const Home: NextPage<SkilsProp> = ({ skils, renderServicies }) => {
     const { setRenderServicies } = useContext(ConditionalRenderingContext);
@@ -18,34 +23,64 @@ const Home: NextPage<SkilsProp> = ({ skils, renderServicies }) => {
 
     return (
         <>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+            <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+            />
 
             <div className={style.heroHead}>
                 <div className="spacer layer1" />
                 <div className={style.heroContent}>
-                    <h1>Hi, i am Riccardo Bussano a 17-year-old <div className="colorGradient">aspiring Software Engineer.</div></h1>
+                    <h1>
+                        Hi, i am Riccardo Bussano a 18-year-old{" "}
+                        <div className="colorGradient">
+                            aspiring Software Engineer.
+                        </div>
+                    </h1>
                     <p>
-                        Hi i am Riccardo an Italian junior developer, based in Turin.<br />
-                        I love build web apps, backand side, and everything in beetween.
+                        Hi i am Riccardo an Italian junior developer, based in
+                        Turin.
+                        <br />I love build web apps, backand side, and
+                        everything in beetween.
                     </p>
                 </div>
             </div>
             <hr />
             <div className={style.content}>
-                <h1>About <span className="colorGradient">Me</span></h1>
+                <h1>
+                    About <span className="colorGradient">Me</span>
+                </h1>
 
                 <div className={style.aboutMe} id="about_me">
                     <div className={style.cardTallContainer}>
-                        <img className={style.cardTall}
+                        <img
+                            className={style.cardTall}
                             src={"/aboutMePfp.jpg"}
                             alt="me.png"
                         />
                     </div>
 
-                    <p>I started programming at the age of 11, starting with small electronic boards like arduino, from that point programming became one of my greatest passions along with video games. Another important step for my programming career was the discovery of DiscordJs a library that is used to communicate with the discord api and thanks to this you can create fantastic bots. Creating bots I became passionate about and my bot was my first big success. Thanks to this my knowledge expanded and from that point I decided to learn the backend side of websites, this topic I am also very passionate about. Besides that I am also passionate about electronics, game developing, 3D modeling and video making</p>
+                    <p>
+                        I started programming at the age of 11, starting with
+                        small electronic boards like arduino, from that point
+                        programming became one of my greatest passions along
+                        with video games. Another important step for my
+                        programming career was the discovery of DiscordJs a
+                        library that is used to communicate with the discord api
+                        and thanks to this you can create fantastic bots.
+                        Creating bots I became passionate about and my bot was
+                        my first big success. Thanks to this my knowledge
+                        expanded and from that point I decided to learn the
+                        backend side of websites, this topic I am also very
+                        passionate about. Besides that I am also passionate
+                        about electronics, game developing, 3D modeling and
+                        video making
+                    </p>
                 </div>
 
-                <h1>My <span className="colorGradient">Skills</span></h1>
+                <h1>
+                    My <span className="colorGradient">Skills</span>
+                </h1>
                 <div className={style.mySkils}>
                     {/* {skils.map((skil) => (
                         <SkilsComponent key={skil.id} skil={skil} />
@@ -172,20 +207,19 @@ const Home: NextPage<SkilsProp> = ({ skils, renderServicies }) => {
                 </div>
             </div>
         </>
-
-
-
-    )
-}
+    );
+};
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-    console.log("📦 Server side log APIBaseURL:", APIBaseUrl)
-    const { data: skils } = await axios.get<SkilsProp>(`${APIBaseUrl}/api/skils/`);
-    const renderServicies = process.env.RENDER_SERVICES == "true"
+    console.log("📦 Server side log APIBaseURL:", APIBaseUrl);
+    const { data: skils } = await axios.get<SkilsProp>(
+        `${APIBaseUrl}/api/skils/`
+    );
+    const renderServicies = process.env.RENDER_SERVICES == "true";
 
     return {
-        props: { skils, renderServicies }
-    }
+        props: { skils, renderServicies },
+    };
 }
 
 export default Home;
