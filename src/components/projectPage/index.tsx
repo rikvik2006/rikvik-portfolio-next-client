@@ -19,7 +19,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
     return (
         <div className={style.container}>
             <div className={style.imageContainer}>
-                <img src={link} alt={title} />
+                <img src={image} alt={title} />
             </div>
         </div>
     );

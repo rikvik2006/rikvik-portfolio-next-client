@@ -17,9 +17,9 @@ const ProjectPage: NextPage<ProjectPageProps> = ({ renderServices }) => {
             <ProjectCard
                 title="Project 1"
                 description="This is a description"
-                image="https://via.placeholder.com/150"
-                link="https://www.google.com"
-                github="https://www.github.com"
+                image="/EmulshroomSponsorLigthImage_WhiteText.png"
+                link="https://emulshroom.vercel.app/"
+                github="https://github.com/rikvik2006/Emulshroom"
             />
         </div>
     );
