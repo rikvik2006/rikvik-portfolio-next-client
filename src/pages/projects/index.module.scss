@@ -1,7 +1,14 @@
 .container {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 1 1fr;
-    grid-template-rows: repeat(1, calc(100vh - clamp(5em, 3em, 4em)));
-    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+    .projectGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        // 100vh - 5em (header padding ovvero quello che serve per non fare finire il cotenuto sotto l'header) - 5rem (margin aggiunto ad ogni card in alto)
+        grid-template-rows: repeat(1, calc(100vh - clamp(5em, 3em, 4em) - 5rem));
+        column-gap: 5rem;
+    }
 }
