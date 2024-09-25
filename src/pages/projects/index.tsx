@@ -15,7 +15,7 @@ const ProjectPage: NextPage<ProjectPageProps> = ({ renderServices }) => {
     return (
         <div className={style.container}>
             <div className={style.projectGrid}>
-                {new Array(5).fill(0).map((_, index) => (
+                {new Array(10).fill(0).map((_, index) => (
                     <ProjectCard
                         key={index}
                         title="Emulshroom"
