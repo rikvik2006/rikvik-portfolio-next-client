@@ -1,14 +1,9 @@
-import { FC } from 'react'
-import Image from "next/image"
-import Link from 'next/link';
+import { FC } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import style from "./index.module.scss";
 
-type Props = {
-
-}
-
-
-
+type Props = {};
 
 const Logo: FC<Props> = () => {
     return (
@@ -17,7 +12,7 @@ const Logo: FC<Props> = () => {
                 <a>
                     <Image
                         className={style.logo}
-                        src="/logoHover.svg"
+                        src="/LogoHover.svg"
                         alt="logo"
                         width={40}
                         height={40}
@@ -25,7 +20,7 @@ const Logo: FC<Props> = () => {
                 </a>
             </Link>
         </div>
-    )
-}
+    );
+};
 
-export default Logo
+export default Logo;
