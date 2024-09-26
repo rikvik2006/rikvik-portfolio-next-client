@@ -20,11 +20,18 @@ const ProjectCard: FC<ProjectCardProps> = ({
 }) => {
     return (
         <div className={style.container}>
-            <div className={style.imageContainer}>
+            <a
+                href={link}
+                className={style.imageContainer}
+                target="_blank"
+                rel="noreferrer"
+            >
                 <img src={image} alt={title} />
-            </div>
+            </a>
             <div className={style.infoContainer}>
-                <h1 className={style.projectTitle}>{title}</h1>
+                <a href={link} target="_blank" rel="noreferrer">
+                    <h1 className={style.projectTitle}>{title}</h1>
+                </a>
                 <div className={style.descriptionRow}>
                     <p className={style.description}>{description}</p>
                     <div className={style.buttonsContainer}>

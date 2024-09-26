@@ -10,5 +10,7 @@
         // 100vh - 5em (header padding ovvero quello che serve per non fare finire il cotenuto sotto l'header) - 5rem (margin aggiunto ad ogni card in alto)
         // grid-auto-rows permette di definire la grandezza delle righe ma in modo dinamico, ovvero che non bisogna definire il numero di righe, ma ci sarà un numero di righe in base al contenuto
         grid-auto-rows: calc(100vh - clamp(5em, 3em, 4em));
+        overflow: scroll;
+        scroll-snap-type: y mandatory;
     }
 }
