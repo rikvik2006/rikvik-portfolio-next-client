@@ -33,7 +33,7 @@ const ProjectPage: NextPage<ProjectPageProps> = ({ renderServices }) => {
 export const getServerSideProps = async (
     context: GetServerSidePropsContext
 ) => {
-    const renderServices = process.env.RENDER_SERVICES;
+    const renderServices = process.env.RENDER_SERVICES == "true";
     return {
         props: {
             renderServices,

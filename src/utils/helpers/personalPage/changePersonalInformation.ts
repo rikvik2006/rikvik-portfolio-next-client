@@ -7,9 +7,12 @@ type RequestBody = {
     name: string;
     surname: string;
     username: string;
-}
+};
 
-export const changePersonalInformation = async (event: React.FormEvent<HTMLFormElement>, personalInfoState: personalInfoState) => {
+export const changePersonalInformation = async (
+    event: React.FormEvent<HTMLFormElement>,
+    personalInfoState: personalInfoState
+) => {
     await event.preventDefault();
 
     const formData = new FormData(event.target as HTMLFormElement);
@@ -21,8 +24,8 @@ export const changePersonalInformation = async (event: React.FormEvent<HTMLFormE
     const requestBody: RequestBody = {
         name,
         surname,
-        username
-    }
+        username,
+    };
 
     console.log("❤️", requestBody);
 
@@ -34,13 +37,17 @@ export const changePersonalInformation = async (event: React.FormEvent<HTMLFormE
         const savedStatus = await toast.promise(response, {
             success: "Saved!",
             error: "An error occured",
-            loading: "Loading"
-        })
+            loading: "Loading",
+        });
 
         if (savedStatus.status == 200) {
-            personalInfoState.setIsPersonalInfoChanged(!personalInfoState.isPersonalInfoChanged)
+            personalInfoState.setIsPersonalInfoChanged(
+                !personalInfoState.isPersonalInfoChanged
+            );
         }
     } catch (err) {
-        personalInfoState.setIsPersonalInfoChanged(!personalInfoState.isPersonalInfoChanged)
+        personalInfoState.setIsPersonalInfoChanged(
+            !personalInfoState.isPersonalInfoChanged
+        );
     }
-}
+};
