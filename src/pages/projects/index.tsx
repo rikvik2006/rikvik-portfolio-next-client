@@ -3,6 +3,7 @@ import style from "./index.module.scss";
 import ProjectCard from "../../components/projectPage";
 import { useContext } from "react";
 import { ConditionalRenderingContext } from "../../utils/contexts/conditionalRendering";
+import { projectList } from "../../utils/projectsList";
 
 type ProjectPageProps = {
     renderServices: boolean;
@@ -15,14 +16,14 @@ const ProjectPage: NextPage<ProjectPageProps> = ({ renderServices }) => {
     return (
         <div className={style.container}>
             <div className={style.projectGrid}>
-                {new Array(10).fill(0).map((_, index) => (
+                {projectList.map((projectList, index) => (
                     <ProjectCard
                         key={index}
-                        title="Emulshroom"
-                        description="Emulshroom is a starup that sell emulsionant products for the food industry. The website is a e-commerce platform that allows users to buy products and learn more about the company."
-                        image="/EmulshroomSponsorLigthImage_WhiteText.png"
-                        link="https://emulshroom.vercel.app/"
-                        github="https://github.com/rikvik2006/Emulshroom"
+                        title={projectList.title}
+                        description={projectList.description}
+                        image={projectList.image}
+                        link={projectList.link}
+                        github={projectList.github}
                     />
                 ))}
             </div>

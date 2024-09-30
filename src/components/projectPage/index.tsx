@@ -3,12 +3,12 @@ import style from "./index.module.scss";
 import { FaSquareGithub } from "react-icons/fa6";
 import { TbExternalLink } from "react-icons/tb";
 
-type ProjectCardProps = {
+export type ProjectCardProps = {
     title: string;
     description: string;
     image: string;
     link: string;
-    github: string | null;
+    github?: string;
 };
 
 const ProjectCard: FC<ProjectCardProps> = ({
